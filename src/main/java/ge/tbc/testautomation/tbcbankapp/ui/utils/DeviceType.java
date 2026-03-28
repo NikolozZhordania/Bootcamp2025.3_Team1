@@ -1,4 +1,7 @@
 package ge.tbc.testautomation.tbcbankapp.ui.utils;
 
-public class SampleHelper {
+public enum DeviceType {
+    DESKTOP,
+    MOBILE
 }
+
