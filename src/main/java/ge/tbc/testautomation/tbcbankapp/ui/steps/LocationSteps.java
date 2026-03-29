@@ -357,10 +357,14 @@ public class LocationSteps {
     }
 
     @Step("Print first 10 location titles")
-    public LocationSteps printTenLocationTitles(){
+    public LocationSteps printTenLocationTitles() {
         locationsPage.locationInput.first().waitFor();
         for (int i = 0; i < 10; i++) {
             System.out.println(locationsPage.locationInput.nth(i).textContent());
+        }
+        return this;
+    }
+
     @Step("Wait for Branch  button")
     public LocationSteps waitForBranchButton() {
         locationsPage.branchTab.waitFor(new Locator.WaitForOptions()
@@ -396,6 +400,7 @@ public class LocationSteps {
         locationsPage.hoursCheck.click();
         return this;
     }
+
     @Step("Branch result count validation")
     public LocationSteps verifyBranchCount() {
         locationsPage.addressResults.first().waitFor();

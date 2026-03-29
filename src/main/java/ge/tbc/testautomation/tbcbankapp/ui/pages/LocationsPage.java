@@ -21,7 +21,7 @@ public class LocationsPage extends CommonPage {
             atmOption,
             branchOption,
             moneyInputOption,
-            locationOption;
+            locationOption,
             branchTab,
             hoursCheck,
             addressResults,
