@@ -7,12 +7,15 @@ import ge.tbc.testautomation.tbcbankapp.ui.pages.LocationsPage;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.LocationHelper;
 import io.qameta.allure.Step;
 import org.json.JSONArray;
+import org.testng.Assert;
 
 import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.URLs.*;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.GeoCodeUtils.addressComponentExists;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.LocatorHelpers.atmOption;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.LocatorHelpers.cityOption;
 import static org.testng.Assert.*;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.LocationData.*;
+
 
 public class LocationSteps {
 
@@ -358,8 +361,67 @@ public class LocationSteps {
         locationsPage.locationInput.first().waitFor();
         for (int i = 0; i < 10; i++) {
             System.out.println(locationsPage.locationInput.nth(i).textContent());
+    @Step("Wait for Branch  button")
+    public LocationSteps waitForBranchButton() {
+        locationsPage.branchTab.waitFor(new Locator.WaitForOptions()
+                .setState(WaitForSelectorState.VISIBLE)
+                .setTimeout(10000));
+        return this;
+    }
+
+    @Step("Click Branch  button")
+    public LocationSteps clickBranchButton() {
+        locationsPage.branchTab.click();
+        return this;
+    }
+
+    @Step("Wait for Branch title to appear")
+    public LocationSteps waitForBranchTitleToAppear() {
+        locationsPage.branchTab.waitFor(new Locator.WaitForOptions()
+                .setState(WaitForSelectorState.VISIBLE)
+                .setTimeout(10000));
+        return this;
+    }
+    @Step("Wait for 24/7  button")
+    public LocationSteps waitForTimeFilterButton() {
+        locationsPage.hoursCheck.waitFor(new Locator.WaitForOptions()
+                .setState(WaitForSelectorState.VISIBLE)
+                .setTimeout(10000));
+        return this;
+    }
+
+
+    @Step("Enable Working Hours filter")
+    public LocationSteps clickTimeFilterButton() {
+        locationsPage.hoursCheck.click();
+        return this;
+    }
+    @Step("Branch result count validation")
+    public LocationSteps verifyBranchCount() {
+        locationsPage.addressResults.first().waitFor();
+        int count = locationsPage.addressResults.count();
+        Assert.assertTrue(count > 0, BRANCHES_MISTAKE);
+        return this;
+    }
+
+    @Step("24/7 Text validation of branch results")
+    public LocationSteps verifyBranchResults() {
+        int count = locationsPage.addressResults.count();
+        for (int i = 0; i < count; i++) {
+            String text = locationsPage.addressResults.nth(i).innerText();
+            Assert.assertTrue(text.contains(EXPECTED_WORD), (LOCATION_MISTAKE));
         }
         return this;
     }
+
+    @Step("Wait for Branch list to update")
+    public LocationSteps waitForBranchListToUpdate() {
+        page.waitForTimeout(1500);
+        return this;
+    }
+
+
+
+
 
 }
