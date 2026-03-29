@@ -51,7 +51,7 @@ public class FilterLocations extends BaseTest {
                 .verifyPageHeaderIsVisible();
     }
     @Story("Branch Tab Selection")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Select the Branch Tab. ")
     @Test(description = "DEV-T3 Step 4:Branch Selection",
             priority = 4,
@@ -63,7 +63,7 @@ public class FilterLocations extends BaseTest {
                 .waitForBranchTitleToAppear();
     }
     @Story("24/7 filter Selection")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.NORMAL)
     @Description("Select the filter.")
     @Test(description = "DEV-T3 Step 5:filter Selection",
             priority = 5,
@@ -75,7 +75,7 @@ public class FilterLocations extends BaseTest {
     }
 
     @Story("Branch District Selection")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.NORMAL)
     @Description("Type in the location input to filter Branches, verify filtered results")
     @Test(
             description = "DEV-T3 Step 6: Branch District input",

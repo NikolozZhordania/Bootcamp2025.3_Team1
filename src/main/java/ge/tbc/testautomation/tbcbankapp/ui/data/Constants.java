@@ -15,6 +15,9 @@ public class Constants {
         public static final String CITY_NAME             = "თბილისი";
         public static final String LOCATION_MISTAKE= "Not all locations operate 24/7!";
         public static final String EXPECTED_WORD= "24/7";
+        public static final String BRANCHES_MISTAKE= "Branches not found!";
+
+
     }
 
     public static class GoogleMaps {

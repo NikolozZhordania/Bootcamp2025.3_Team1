@@ -345,7 +345,7 @@ public class LocationSteps {
 
     @Step("Wait for Branch title to appear")
     public LocationSteps waitForBranchTitleToAppear() {
-        locationsPage.branchTitle.waitFor(new Locator.WaitForOptions()
+        locationsPage.branchTab.waitFor(new Locator.WaitForOptions()
                 .setState(WaitForSelectorState.VISIBLE)
                 .setTimeout(10000));
         return this;
@@ -359,32 +359,37 @@ public class LocationSteps {
     }
 
 
-    @Step("Apply 24/7 filter button")
+    @Step("Enable Working Hours filter")
     public LocationSteps clickTimeFilterButton() {
         locationsPage.hoursCheck.click();
         return this;
     }
-    @Step("Verify results are not empty")
+    @Step("Branch result count validation")
     public LocationSteps verifyBranchCount() {
         locationsPage.addressResults.first().waitFor();
         int count = locationsPage.addressResults.count();
-        assertTrue(count > 0, "Branches not found!");
+        Assert.assertTrue(count > 0, BRANCHES_MISTAKE);
         return this;
     }
 
-    @Step("Validate results with 24/7 text")
+    @Step("24/7 Text validation of branch results")
     public LocationSteps verifyBranchResults() {
         int count = locationsPage.addressResults.count();
         for (int i = 0; i < count; i++) {
             String text = locationsPage.addressResults.nth(i).innerText();
-            assertTrue(text.contains(EXPECTED_WORD), (LOCATION_MISTAKE));
+            Assert.assertTrue(text.contains(EXPECTED_WORD), (LOCATION_MISTAKE));
         }
         return this;
     }
+
     @Step("Wait for Branch list to update")
     public LocationSteps waitForBranchListToUpdate() {
         page.waitForTimeout(1500);
         return this;
     }
+
+
+
+
 
 }
