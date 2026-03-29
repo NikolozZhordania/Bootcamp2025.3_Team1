@@ -7,12 +7,15 @@ import ge.tbc.testautomation.tbcbankapp.ui.pages.LocationsPage;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.LocationHelper;
 import io.qameta.allure.Step;
 import org.json.JSONArray;
+import org.testng.Assert;
 
 import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.URLs.*;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.GeoCodeUtils.addressComponentExists;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.LocatorHelpers.atmOption;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.LocatorHelpers.cityOption;
 import static org.testng.Assert.*;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.LocationData.*;
+
 
 public class LocationSteps {
 
@@ -325,4 +328,63 @@ public class LocationSteps {
         if (expectedStreet == null) return this;
         return verifyStreetInGeocodeResults(expectedStreet);
     }
+
+    @Step("Wait for Branch  button")
+    public LocationSteps waitForBranchButton() {
+        locationsPage.branchTab.waitFor(new Locator.WaitForOptions()
+                .setState(WaitForSelectorState.VISIBLE)
+                .setTimeout(10000));
+        return this;
+    }
+
+    @Step("Click Branch  button")
+    public LocationSteps clickBranchButton() {
+        locationsPage.branchTab.click();
+        return this;
+    }
+
+    @Step("Wait for Branch title to appear")
+    public LocationSteps waitForBranchTitleToAppear() {
+        locationsPage.branchTitle.waitFor(new Locator.WaitForOptions()
+                .setState(WaitForSelectorState.VISIBLE)
+                .setTimeout(10000));
+        return this;
+    }
+    @Step("Wait for 24/7  button")
+    public LocationSteps waitForTimeFilterButton() {
+        locationsPage.hoursCheck.waitFor(new Locator.WaitForOptions()
+                .setState(WaitForSelectorState.VISIBLE)
+                .setTimeout(10000));
+        return this;
+    }
+
+
+    @Step("Apply 24/7 filter button")
+    public LocationSteps clickTimeFilterButton() {
+        locationsPage.hoursCheck.click();
+        return this;
+    }
+    @Step("Verify results are not empty")
+    public LocationSteps verifyBranchCount() {
+        locationsPage.addressResults.first().waitFor();
+        int count = locationsPage.addressResults.count();
+        assertTrue(count > 0, "Branches not found!");
+        return this;
+    }
+
+    @Step("Validate results with 24/7 text")
+    public LocationSteps verifyBranchResults() {
+        int count = locationsPage.addressResults.count();
+        for (int i = 0; i < count; i++) {
+            String text = locationsPage.addressResults.nth(i).innerText();
+            assertTrue(text.contains(EXPECTED_WORD), (LOCATION_MISTAKE));
+        }
+        return this;
+    }
+    @Step("Wait for Branch list to update")
+    public LocationSteps waitForBranchListToUpdate() {
+        page.waitForTimeout(1500);
+        return this;
+    }
+
 }
