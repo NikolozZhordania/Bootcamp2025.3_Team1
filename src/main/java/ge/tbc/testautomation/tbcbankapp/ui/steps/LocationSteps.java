@@ -325,4 +325,41 @@ public class LocationSteps {
         if (expectedStreet == null) return this;
         return verifyStreetInGeocodeResults(expectedStreet);
     }
+
+    @Step("Click ATM options")
+    public LocationSteps clickAtmOptions(){
+        locationsPage.atmOption.click();
+        return this;
+    }
+
+    @Step("Click branch options")
+    public LocationSteps clickBranchOptions(){
+        locationsPage.branchOption.click();
+        return this;
+    }
+
+    @Step("Click money input options")
+    public LocationSteps clickMoneyInputOptions(){
+        locationsPage.moneyInputOption.click();
+        return this;
+    }
+
+    @Step("Print all location titles")
+    public LocationSteps printAllLocationTitles(){
+        locationsPage.locationInput.first().waitFor();
+        for (int i = 0; i < locationsPage.locationInput.count(); i++) {
+            System.out.println(locationsPage.locationInput.nth(i).textContent());
+        }
+        return this;
+    }
+
+    @Step("Print first 10 location titles")
+    public LocationSteps printTenLocationTitles(){
+        locationsPage.locationInput.first().waitFor();
+        for (int i = 0; i < 10; i++) {
+            System.out.println(locationsPage.locationInput.nth(i).textContent());
+        }
+        return this;
+    }
+
 }

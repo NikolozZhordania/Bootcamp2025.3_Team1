@@ -17,7 +17,11 @@ public class LocationsPage extends CommonPage {
             atmListItems,
             map,
             activeMapMarker,
-            currentUserLocation;
+            currentUserLocation,
+            atmOption,
+            branchOption,
+            moneyInputOption,
+            locationOption;
 
     public LocationsPage(Page page) {
         super(page);
@@ -46,5 +50,13 @@ public class LocationsPage extends CommonPage {
 
         this.currentUserLocation = page.locator("gmp-advanced-marker.internal-visible");
 
+        this.atmOption = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions()
+                .setName("ბანკომატები"));
+        this.branchOption = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions()
+                .setName("ფილიალები"));
+        this.moneyInputOption = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions()
+                .setName("თანხის მიმღები"));
+
+        this.locationInput = page.locator("app-atm-branches-section-list-item .tbcx-pw-title");
     }
 }
