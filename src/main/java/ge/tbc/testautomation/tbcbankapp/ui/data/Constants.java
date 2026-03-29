@@ -13,6 +13,11 @@ public class Constants {
         public static final String SELECTED_ATM_LOCATION = " ვაზისუბნის 1 მ/რ, თეოფანე დავითაიას ქ. #1ა ";
         public static final String STREET_NAME           = "თეოფანე დავითაიას ქუჩა";
         public static final String CITY_NAME             = "თბილისი";
+        public static final String LOCATION_MISTAKE= "Not all locations operate 24/7!";
+        public static final String EXPECTED_WORD= "24/7";
+        public static final String BRANCHES_MISTAKE= "Branches not found!";
+
+
     }
 
     public static class GoogleMaps {
