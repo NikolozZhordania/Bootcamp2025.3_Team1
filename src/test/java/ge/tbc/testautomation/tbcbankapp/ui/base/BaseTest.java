@@ -18,6 +18,15 @@ public class BaseTest {
     protected HomeSteps homeSteps;
     protected LocationSteps locationSteps;
 
+    @BeforeSuite
+    public void setupDatabase() throws Exception {
+        // This executes the shell script automatically before any tests start
+        ProcessBuilder pb = new ProcessBuilder("bash", "db/setup_db.sh");
+        pb.inheritIO();
+        Process process = pb.start();
+        process.waitFor();
+    }
+
     @Parameters({"device", "browser"})
     @BeforeClass(alwaysRun = true)
     public void setUp(

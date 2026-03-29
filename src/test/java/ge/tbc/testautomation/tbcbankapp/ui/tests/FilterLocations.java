@@ -1,7 +1,7 @@
 package ge.tbc.testautomation.tbcbankapp.ui.tests;
 
 import ge.tbc.testautomation.tbcbankapp.ui.base.BaseTest;
-import ge.tbc.testautomation.tbcbankapp.ui.data.DivisionData;
+import ge.tbc.testautomation.tbcbankapp.ui.data.constants.DivisionData;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
