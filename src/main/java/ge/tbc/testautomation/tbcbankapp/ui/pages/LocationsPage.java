@@ -18,6 +18,10 @@ public class LocationsPage extends CommonPage {
             map,
             activeMapMarker,
             currentUserLocation,
+            atmOption,
+            branchOption,
+            moneyInputOption,
+            locationOption;
             branchTab,
             hoursCheck,
             addressResults,
@@ -58,5 +62,13 @@ public class LocationsPage extends CommonPage {
 
 
 
+        this.atmOption = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions()
+                .setName("ბანკომატები"));
+        this.branchOption = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions()
+                .setName("ფილიალები"));
+        this.moneyInputOption = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions()
+                .setName("თანხის მიმღები"));
+
+        this.locationInput = page.locator("app-atm-branches-section-list-item .tbcx-pw-title");
     }
 }
