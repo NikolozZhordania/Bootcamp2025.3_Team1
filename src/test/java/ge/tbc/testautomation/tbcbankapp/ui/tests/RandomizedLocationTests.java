@@ -1,10 +1,8 @@
 package ge.tbc.testautomation.tbcbankapp.ui.tests;
 
 import ge.tbc.testautomation.tbcbankapp.ui.base.BaseTest;
-import ge.tbc.testautomation.tbcbankapp.ui.data.GeoLocationRandomization;
 import io.qameta.allure.*;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 @Epic("TBC Bank Web Application")
@@ -13,7 +11,7 @@ public class RandomizedLocationTests extends BaseTest {
 
     @BeforeClass
     public void navigate() {
-        System.out.println("District: " + GeoLocationRandomization.getDistrict(currentLocation[0], currentLocation[1]));
+        System.out.println("District: " + currentDistrict.name());
         System.out.println("Lat: " + currentLocation[0] + " | Lng: " + currentLocation[1]);
     }
 

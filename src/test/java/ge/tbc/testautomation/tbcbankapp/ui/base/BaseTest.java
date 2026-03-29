@@ -2,10 +2,11 @@ package ge.tbc.testautomation.tbcbankapp.ui.base;
 
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.WaitForSelectorState;
-import ge.tbc.testautomation.tbcbankapp.ui.data.GeoLocationRandomization;
+import ge.tbc.testautomation.tbcbankapp.ui.data.GeoLocationEnum;
 import ge.tbc.testautomation.tbcbankapp.ui.pages.CommonPage;
 import ge.tbc.testautomation.tbcbankapp.ui.steps.*;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.DeviceType;
+import ge.tbc.testautomation.tbcbankapp.ui.utils.GeoLocationRandomizer;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.TestContext;
 import org.testng.annotations.*;
 
@@ -18,6 +19,7 @@ public class BaseTest {
     protected BrowserContext context;
     protected Page page;
     protected double[] currentLocation;
+    protected GeoLocationEnum currentDistrict;
 
     protected HomeSteps homeSteps;
     protected LocationSteps locationSteps;
@@ -67,13 +69,14 @@ public class BaseTest {
             contextOptions.setViewportSize(null);
         }
 
-        //get a random district from GeoLocationRandomization and place the user there
-        // random district
-         GeoLocationRandomization.District[] districts = GeoLocationRandomization.District.values();
-         currentLocation = GeoLocationRandomization.getRandomFromDistrict(districts[new Random().nextInt(districts.length)]);
+        // OPTION 1 — random district
+        GeoLocationEnum[] districts = GeoLocationEnum.values();
+        currentDistrict = districts[new Random().nextInt(districts.length)];
 
-        // specific district
-//        currentLocation = GeoLocationRandomization.getRandomFromDistrict(GeoLocationRandomization.District.VAKE);
+        // OPTION 2 — specific district
+//        currentDistrict = GeoLocationEnum.VAKE;
+
+        currentLocation = GeoLocationRandomizer.getRandomFromDistrict(currentDistrict);
 
         contextOptions
                 .setGeolocation(currentLocation[0], currentLocation[1])
