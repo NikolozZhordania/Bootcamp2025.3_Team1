@@ -1,45 +1,21 @@
 package ge.tbc.testautomation.tbcbankapp.base;
 
+import ge.tbc.testautomation.tbcbankapp.db.utils.DatabaseUtils;
 import org.testng.annotations.BeforeSuite;
 
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
 
 public class DBSetUp {
 
     @BeforeSuite(alwaysRun = true)
     public void setupDatabase() throws Exception {
-        Path projectRoot = Paths.get(System.getProperty("user.dir"));
-        Path dbPath      = projectRoot.resolve("tbc_map.db");
-        Path schemaPath  = projectRoot.resolve("db/schema.sql");
-        Path seedPath    = projectRoot.resolve("db/seed.sql");
+        Files.deleteIfExists(DatabaseUtils.DB_PATH);
 
-        Files.deleteIfExists(dbPath);
+        String jdbcUrl = DatabaseUtils.getJdbcUrl(DatabaseUtils.DB_PATH);
 
-        String jdbcUrl = "jdbc:sqlite:" + dbPath.toAbsolutePath()
-                .toString()
-                .replace("\\", "/");
+        DatabaseUtils.executeSqlFile(jdbcUrl, DatabaseUtils.SCHEMA_PATH);
+        DatabaseUtils.executeSqlFile(jdbcUrl, DatabaseUtils.SEED_PATH);
 
-        executeSqlFile(jdbcUrl, schemaPath);
-        executeSqlFile(jdbcUrl, seedPath);
-
-        System.out.println("Database ready at: " + dbPath.toAbsolutePath());
-    }
-
-    private void executeSqlFile(String jdbcUrl, Path sqlFile) throws Exception {
-        String sql = Files.readString(sqlFile);
-        try (Connection conn = DriverManager.getConnection(jdbcUrl);
-             Statement stmt  = conn.createStatement()) {
-            for (String statement : sql.split(";")) {
-                String trimmed = statement.trim();
-                if (!trimmed.isEmpty()) {
-                    stmt.execute(trimmed);
-                }
-            }
-        }
+        System.out.println("Database ready at: " + DatabaseUtils.DB_PATH.toAbsolutePath());
     }
 }
