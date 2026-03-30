@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 @Epic("TBC Bank Web Application")
 @Feature("Locations & ATMs")
-@Test(description = "DEV-T4: Negative scenario for ATM filtering")
+@Test(description = "SCRUM-T6: ATM Search with Invalid Address and Zero Results Validation")
 public class NegativeFilterTest extends BaseTest {
 
     private final String randomStreet = FakerHelper.randomStreetName();
@@ -15,7 +15,7 @@ public class NegativeFilterTest extends BaseTest {
     @Story("Homepage Access")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Open the homepage and verify that the main page elements and navigation menu are visible.")
-    @Test(description = "DEV-T4 Step 1: Homepage access", priority = 1)
+    @Test(description = "SCRUM-T6 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
                 .openHomepage()
@@ -24,7 +24,7 @@ public class NegativeFilterTest extends BaseTest {
     @Story("Kebab Menu Validation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that the Kebab menu is visible and the Locations option is accessible.")
-    @Test(description = "DEV-T4 Step 2: Navigation menu access",
+    @Test(description = "SCRUM-T6 Step 2: Navigation menu access",
             priority = 2,
             dependsOnMethods = "homepageAccess")
     public void kebabMenuAccess() {
@@ -35,7 +35,7 @@ public class NegativeFilterTest extends BaseTest {
     @Story("Locations Page Access")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Open the Locations page and validate the page header and URL are displayed correctly.")
-    @Test(description = "DEV-T4 Step 3: Locations page selection",
+    @Test(description = "SCRUM-T6 Step 3: Locations page selection",
             priority = 3,
             dependsOnMethods = "kebabMenuAccess")
     public void locationsPageSelection() {
@@ -51,7 +51,7 @@ public class NegativeFilterTest extends BaseTest {
     @Story("Bank Service Point Selection")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Select the ATM service point option")
-    @Test(description = "DEV-T4 Step 4: Bank service point selection (ATM)",
+    @Test(description = "SCRUM-T6 Step 4: Bank service point selection (ATM)",
             priority = 4,
             dependsOnMethods = "locationsPageSelection")
     public void servicePointSelection() {
@@ -64,7 +64,7 @@ public class NegativeFilterTest extends BaseTest {
     @Story("Location Input Filtering")
     @Severity(SeverityLevel.NORMAL)
     @Description("Enter a random street name in the location input to filter ATMs and Verify that the filtered ATM list is empty.")
-    @Test(description = "DEV-T4 Step 5: Location input and filtering",
+    @Test(description = "SCRUM-T6 Step 5: Location input and filtering",
             priority = 5,
             dependsOnMethods = "servicePointSelection")
     public void locationInput() {
