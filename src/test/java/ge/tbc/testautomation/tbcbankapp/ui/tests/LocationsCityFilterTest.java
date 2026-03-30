@@ -8,13 +8,13 @@ import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.LocationData.*;
 
 @Epic("TBC Bank Web Application")
 @Feature("Locations & ATMs")
-@Test(description = "DEV-T5: Filter Available ATM Locations by Selected City")
+@Test(description = "SCRUM-T7: ATM list filtering by city dropdown and validation via Geocoding API")
 public class LocationsCityFilterTest extends BaseTest {
 
     @Story("Homepage Access")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Access the homepage and verify that the main elements and navigation menu are visible.")
-    @Test(description = "DEV-T5 Step 1: Homepage access", priority = 1)
+    @Test(description = "SCRUM-T7 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
                 .openHomepage()
@@ -26,7 +26,7 @@ public class LocationsCityFilterTest extends BaseTest {
     @Story("Navigation Menu Validation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that the dropdown navigation menu is visible and the Locations option is accessible.")
-    @Test(description = "DEV-T5 Step 2: Navigation menu access",
+    @Test(description = "SCRUM-T7 Step 2: Navigation menu access",
             priority = 2,
             dependsOnMethods = "homepageAccess")
     public void navMenuAccess() {
@@ -38,7 +38,7 @@ public class LocationsCityFilterTest extends BaseTest {
     @Story("Locations Page Access")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Open the Locations page and validate that the page header and URL are correctly displayed.")
-    @Test(description = "DEV-T5 Step 3: Locations page selection",
+    @Test(description = "SCRUM-T7 Step 3: Locations page selection",
             priority = 3,
             dependsOnMethods = "navMenuAccess")
     public void locationsPageSelection() {
@@ -54,7 +54,7 @@ public class LocationsCityFilterTest extends BaseTest {
     @Story("Bank Service Point Selection")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Select the ATM service point option and verify that the ATM list is loaded and not empty.")
-    @Test(description = "DEV-T5 Step 4: Bank service point selection (ATM)",
+    @Test(description = "SCRUM-T7 Step 4: Bank service point selection (ATM)",
             priority = 4,
             dependsOnMethods = "locationsPageSelection")
     public void servicePointSelection() {
@@ -70,7 +70,7 @@ public class LocationsCityFilterTest extends BaseTest {
     @Story("City Filter Selection & Verification")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Select a city from the dropdown filter and validate that the ATM list, geocode results, and map markers match the selected city.")
-    @Test(description = "DEV-T5 Step 5: City filter selection and verification",
+    @Test(description = "SCRUM-T7 Step 5: City filter selection and verification",
             priority = 5,
             dependsOnMethods = "servicePointSelection")
     public void citySelection() {

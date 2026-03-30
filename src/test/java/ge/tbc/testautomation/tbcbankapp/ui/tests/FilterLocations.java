@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 @Epic("TBC Bank Web Application")
 @Feature("Locations & ATMs")
-@Test(description = "DEV-T3: View 24/7 Branches")
+@Test(description = "SCRUM-T3: Branch Selection with District Search and 24/7 Availability Validation")
 public class FilterLocations extends BaseTest {
 
     @Story("Homepage Access")
@@ -26,7 +26,7 @@ public class FilterLocations extends BaseTest {
     @Story("Navigation Menu Validation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that the dropdown navigation menu is visible and the Locations option is accessible.")
-    @Test(description = "DEV-T3 Step 2: Navigation menu access",
+    @Test(description = "SCRUM-T3 Step 2: Navigation menu access",
             priority = 2,
             dependsOnMethods = "homepageAccess")
     public void navMenuAccess() {
@@ -38,7 +38,7 @@ public class FilterLocations extends BaseTest {
     @Story("Locations Page Access")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Open the Locations page and validate the page header and URL are displayed correctly.")
-    @Test(description = "DEV-T3 Step 3: Locations page selection",
+    @Test(description = "SCRUM-T3 Step 3: Locations page selection",
             priority = 3,
             dependsOnMethods = "navMenuAccess")
     public void locationsPageSelection() {
@@ -53,7 +53,7 @@ public class FilterLocations extends BaseTest {
     @Story("Branch Tab Selection")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Select the Branch Tab. ")
-    @Test(description = "DEV-T3 Step 4:Branch Selection",
+    @Test(description = "SCRUM-T3 Step 4:Branch Selection",
             priority = 4,
             dependsOnMethods = "locationsPageSelection")
     public void branchTabSelection() {
@@ -65,7 +65,7 @@ public class FilterLocations extends BaseTest {
     @Story("24/7 filter Selection")
     @Severity(SeverityLevel.NORMAL)
     @Description("Select the filter.")
-    @Test(description = "DEV-T3 Step 5:filter Selection",
+    @Test(description = "SCRUM-T3 Step 5:filter Selection",
             priority = 5,
             dependsOnMethods = "branchTabSelection")
     public void filterSelection() {
@@ -78,7 +78,7 @@ public class FilterLocations extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Description("Type in the location input to filter Branches, verify filtered results")
     @Test(
-            description = "DEV-T3 Step 6: Branch District input",
+            description = "SCRUM-T3 Step 6: Branch District input",
             dataProvider = "DistrictNames",
             dataProviderClass = DivisionData.class,
             priority = 6
