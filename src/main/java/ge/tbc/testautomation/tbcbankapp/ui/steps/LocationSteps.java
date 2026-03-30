@@ -424,5 +424,60 @@ public class LocationSteps {
         page.waitForTimeout(1500);
         return this;
     }
+    @Step("Print locations open Monday to Friday")
+    public LocationSteps printMondayToFridayBranches(String label) {
+        locationsPage.mondayToFriday.first().waitFor();
+        int count = locationsPage.mondayToFriday.count();
+        System.out.println("\n" + label + " open Monday-Friday (10:00-18:00): " + count);
+        for (int i = 0; i < count; i++) {
+            System.out.println(locationsPage.mondayToFriday.nth(i)
+                    .locator(".tbcx-pw-title").textContent());
+        }
+        return this;
+    }
+
+    @Step("Print locations open on Saturday")
+    public LocationSteps printSaturdayBranches(String label) {
+        int count = locationsPage.saturday.count();
+        System.out.println("\n" + label + " open on Saturday (10:00-14:00): " + count);
+        for (int i = 0; i < count; i++) {
+            System.out.println(locationsPage.saturday.nth(i)
+                    .locator(".tbcx-pw-title").textContent());
+        }
+        return this;
+    }
+
+    @Step("Print locations open on Sunday")
+    public LocationSteps printSundayBranches(String label) {
+        int count = locationsPage.sunday.count();
+        System.out.println("\n" + label + " open on Sunday: " + count);
+        for (int i = 0; i < count; i++) {
+            System.out.println(locationsPage.sunday.nth(i)
+                    .locator(".tbcx-pw-title").textContent());
+        }
+        return this;
+    }
+
+    @Step("Print locations open 24/7")
+    public LocationSteps printAllWeekBranches(String label) {
+        int count = locationsPage.allWeek.count();
+        System.out.println("\n" + label + " open 24/7: " + count);
+        for (int i = 0; i < count; i++) {
+            System.out.println(locationsPage.allWeek.nth(i)
+                    .locator(".tbcx-pw-title").textContent());
+        }
+        return this;
+    }
+
+    @Step("Print locations open Monday-Friday AND Saturday")
+    public LocationSteps printMondayToFridayAndSaturdayBranches(String label) {
+        int count = locationsPage.mondayToFridayAndSaturday.count();
+        System.out.println("\n" + label + " open Monday-Friday AND Saturday: " + count);
+        for (int i = 0; i < count; i++) {
+            System.out.println(locationsPage.mondayToFridayAndSaturday.nth(i)
+                    .locator(".tbcx-pw-title").textContent());
+        }
+        return this;
+    }
 
 }
