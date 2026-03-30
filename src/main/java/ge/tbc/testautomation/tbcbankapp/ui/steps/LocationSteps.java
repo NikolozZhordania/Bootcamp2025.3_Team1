@@ -9,12 +9,12 @@ import io.qameta.allure.Step;
 import org.json.JSONArray;
 import org.testng.Assert;
 
-import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.URLs.*;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.URLs.*;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.GeoCodeUtils.addressComponentExists;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.LocatorHelpers.atmOption;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.LocatorHelpers.cityOption;
 import static org.testng.Assert.*;
-import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.LocationData.*;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.LocationData.*;
 
 
 public class LocationSteps {

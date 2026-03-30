@@ -1,4 +1,4 @@
-package ge.tbc.testautomation.tbcbankapp.ui.data.db.models;
+package ge.tbc.testautomation.tbcbankapp.db.models;
 
 import lombok.Getter;
 

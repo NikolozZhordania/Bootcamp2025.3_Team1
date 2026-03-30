@@ -1,13 +1,12 @@
 package ge.tbc.testautomation.tbcbankapp.api;
 
-import ge.tbc.testautomation.tbcbankapp.ui.data.db.mappers.LocationMapper;
-import ge.tbc.testautomation.tbcbankapp.ui.data.db.models.Location;
-import ge.tbc.testautomation.tbcbankapp.ui.data.db.utils.MyBatisUtil;
+import ge.tbc.testautomation.tbcbankapp.db.mappers.LocationMapper;
+import ge.tbc.testautomation.tbcbankapp.db.models.Location;
+import ge.tbc.testautomation.tbcbankapp.db.utils.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;

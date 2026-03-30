@@ -8,7 +8,7 @@ import ge.tbc.testautomation.tbcbankapp.ui.utils.TestContext;
 import io.qameta.allure.Step;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.URLs.*;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.URLs.*;
 
 public class HomeSteps {
 

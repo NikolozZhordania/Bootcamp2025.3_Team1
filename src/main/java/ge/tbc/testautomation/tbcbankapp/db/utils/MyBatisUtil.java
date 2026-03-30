@@ -1,4 +1,4 @@
-package ge.tbc.testautomation.tbcbankapp.ui.data.db.utils;
+package ge.tbc.testautomation.tbcbankapp.db.utils;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.*;

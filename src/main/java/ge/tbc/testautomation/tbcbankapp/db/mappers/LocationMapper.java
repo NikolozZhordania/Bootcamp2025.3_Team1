@@ -1,6 +1,6 @@
-package ge.tbc.testautomation.tbcbankapp.ui.data.db.mappers;
+package ge.tbc.testautomation.tbcbankapp.db.mappers;
 
-import ge.tbc.testautomation.tbcbankapp.ui.data.db.models.Location;
+import ge.tbc.testautomation.tbcbankapp.db.models.Location;
 import org.apache.ibatis.annotations.Select;
 import java.util.List;
 

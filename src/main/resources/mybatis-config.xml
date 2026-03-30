@@ -13,6 +13,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper class="ge.tbc.testautomation.tbcbankapp.ui.data.db.mappers.LocationMapper"/>
+        <mapper class="ge.tbc.testautomation.tbcbankapp.db.mappers.LocationMapper"/>
     </mappers>
 </configuration>

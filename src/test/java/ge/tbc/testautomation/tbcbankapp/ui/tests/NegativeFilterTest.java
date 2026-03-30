@@ -1,14 +1,16 @@
 package ge.tbc.testautomation.tbcbankapp.ui.tests;
 
 import ge.tbc.testautomation.tbcbankapp.ui.base.BaseTest;
+import ge.tbc.testautomation.tbcbankapp.ui.utils.FakerHelper;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
-import com.github.javafaker.Faker;
 
 @Epic("TBC Bank Web Application")
 @Feature("Locations & ATMs")
 @Test(description = "DEV-T4: Negative scenario for ATM filtering")
 public class NegativeFilterTest extends BaseTest {
+
+    private final String randomStreet = FakerHelper.randomStreetName();
 
     @Story("Homepage Access")
     @Severity(SeverityLevel.BLOCKER)
@@ -66,8 +68,6 @@ public class NegativeFilterTest extends BaseTest {
             priority = 5,
             dependsOnMethods = "servicePointSelection")
     public void locationInput() {
-        Faker faker = new Faker();
-        String randomStreet = faker.address().streetName();
         locationSteps
                 .typeInLocationInput(randomStreet)
                 .waitForATMListToUpdate()
@@ -75,7 +75,4 @@ public class NegativeFilterTest extends BaseTest {
                 .verifyAtmListCount();
 
     }
-
-
-
 }

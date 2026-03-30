@@ -10,10 +10,10 @@ import org.json.JSONObject;
 import java.util.Locale;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.APIKeys.GOOGLE_MAPS_API_KEY;
-import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.GeocodeJson.*;
-import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.GoogleMaps.*;
-import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.MarkerAttributes.*;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.APIKeys.GOOGLE_MAPS_API_KEY;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.GeocodeJson.*;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.GoogleMaps.*;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.MarkerAttributes.*;
 
 public class GeoCodeUtils {
 
