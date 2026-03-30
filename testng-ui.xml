@@ -4,7 +4,7 @@
         <parameter name="device" value="desktop"/>
         <parameter name="browser" value="chromium"/>
         <classes>
-            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.Bzz"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.RandomizedLocationTests"/>
         </classes>
     </test>
 </suite>

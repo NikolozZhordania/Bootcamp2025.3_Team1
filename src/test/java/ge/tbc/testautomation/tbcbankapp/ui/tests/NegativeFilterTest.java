@@ -35,7 +35,7 @@ public class NegativeFilterTest extends BaseTest {
     @Description("Open the Locations page and validate the page header and URL are displayed correctly.")
     @Test(description = "DEV-T4 Step 3: Locations page selection",
             priority = 3,
-            dependsOnMethods = "KebabMenuAccess")
+            dependsOnMethods = "kebabMenuAccess")
     public void locationsPageSelection() {
         homeSteps
                 .verifyLocationsIconVisibility()
