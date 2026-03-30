@@ -4,6 +4,9 @@ import ge.tbc.testautomation.tbcbankapp.ui.base.BaseTest;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.CalendarData.BRANCHES;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.CalendarData.MONEY_INPUT;
+
 @Epic("TBC Bank Web Application")
 @Feature("Locations & ATMs")
 public class CalendarTest extends BaseTest {
@@ -66,11 +69,11 @@ public class CalendarTest extends BaseTest {
             dependsOnMethods = "branchesCalendar")
     public void branchesCalendarResults() {
         locationSteps
-                .printMondayToFridayBranches("Branches")
-                .printSundayBranches("Branches")
-                .printSaturdayBranches("Branches")
-                .printAllWeekBranches("Branches")
-                .printMondayToFridayAndSaturdayBranches("Branches");
+                .printMondayToFridayBranches(BRANCHES)
+                .printSundayBranches(BRANCHES)
+                .printSaturdayBranches(BRANCHES)
+                .printAllWeekBranches(BRANCHES)
+                .printMondayToFridayAndSaturdayBranches(BRANCHES);
     }
 
     @Story("Money Input Working Hours")
@@ -92,10 +95,10 @@ public class CalendarTest extends BaseTest {
             dependsOnMethods = "moneyInputCalendar")
     public void moneyInputCalendarResults() {
         locationSteps
-                .printMondayToFridayBranches("Money Input Devices")
-                .printSundayBranches("Money Input Devices")
-                .printSaturdayBranches("Money Input Devices")
-                .printAllWeekBranches("Money Input Devices")
-                .printMondayToFridayAndSaturdayBranches("Money Input Devices");
+                .printMondayToFridayBranches(MONEY_INPUT)
+                .printSundayBranches(MONEY_INPUT)
+                .printSaturdayBranches(MONEY_INPUT)
+                .printAllWeekBranches(MONEY_INPUT)
+                .printMondayToFridayAndSaturdayBranches(MONEY_INPUT);
     }
 }

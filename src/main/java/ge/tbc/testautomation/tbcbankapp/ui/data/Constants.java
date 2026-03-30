@@ -1,4 +1,4 @@
-package ge.tbc.testautomation.tbcbankapp.ui.data.constants;
+package ge.tbc.testautomation.tbcbankapp.ui.data;
 
 public class Constants {
 
@@ -23,7 +23,6 @@ public class Constants {
     public static class GoogleMaps {
         public static final String BASE_URI          = "https://maps.googleapis.com";
         public static final String GEOCODE_PATH      = "/maps/api/geocode/json";
-        public static final String API_KEY_ENV       = "GOOGLE_MAPS_API_KEY";
         public static final String LANGUAGE          = "ka";
         public static final String STATUS_OK         = "OK";
         public static final String LATLNG_PARAM      = "latlng";
@@ -45,6 +44,11 @@ public class Constants {
         public static final String POSITION_ATTR   = "position";
         public static final String COORD_SEPARATOR = ",";
         public static final int    COORD_LENGTH    = 2;
+    }
+
+    public static class CalendarData {
+        public static final String BRANCHES     = "Branches";
+        public static final String MONEY_INPUT  = "Money Input Devices";
     }
 
     public static class APIKeys {

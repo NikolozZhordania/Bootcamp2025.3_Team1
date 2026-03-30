@@ -14,7 +14,8 @@ public class CommonPage {
             burgerMenu,
             cookieAcceptButton,
             kebabMenuButton,
-            locationsIcon;
+            locationsIcon,
+            denyCookieBtn;
 
     public CommonPage(Page page) {
 
@@ -42,5 +43,6 @@ public class CommonPage {
                 .first();
         this.kebabMenuButton = page.locator("button:has(tbcx-icon:has-text('kebab-menu-vertical-outlined'))");
         this.locationsIcon = page.locator("button:has(tbcx-icon[style*='location-pin-outlined'])");
+        this.denyCookieBtn = page.locator("app-cookie-consent").getByText("უარყოფა");
     }
 }

@@ -4,7 +4,7 @@ import ge.tbc.testautomation.tbcbankapp.ui.base.BaseTest;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
-import static ge.tbc.testautomation.tbcbankapp.ui.data.constants.Constants.LocationData.*;
+import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.LocationData.*;
 
 @Epic("TBC Bank Web Application")
 @Feature("Locations & ATMs")

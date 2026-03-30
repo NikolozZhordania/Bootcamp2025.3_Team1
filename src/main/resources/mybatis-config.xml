@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="test">
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="org.sqlite.JDBC"/>
+                <property name="url"    value="jdbc:sqlite:${user.dir}/tbc_map.db"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper class="ge.tbc.testautomation.tbcbankapp.db.mappers.LocationMapper"/>
+    </mappers>
+</configuration>

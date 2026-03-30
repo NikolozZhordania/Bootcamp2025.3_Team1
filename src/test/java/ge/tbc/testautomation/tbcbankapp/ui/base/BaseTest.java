@@ -1,6 +1,7 @@
 package ge.tbc.testautomation.tbcbankapp.ui.base;
 
 import com.microsoft.playwright.*;
+import ge.tbc.testautomation.tbcbankapp.base.DBSetUp;
 import ge.tbc.testautomation.tbcbankapp.ui.data.GeoLocationEnum;
 import ge.tbc.testautomation.tbcbankapp.ui.steps.*;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.DeviceType;
@@ -10,7 +11,7 @@ import org.testng.annotations.*;
 
 import java.util.Random;
 
-public class BaseTest {
+public class BaseTest extends DBSetUp {
 
     protected Playwright playwright;
     protected Browser browser;
@@ -23,9 +24,8 @@ public class BaseTest {
     protected LocationSteps locationSteps;
     protected BaseSteps baseSteps;
 
-
     @Parameters({"device", "browser"})
-    @BeforeClass(alwaysRun = true)
+    @BeforeSuite(alwaysRun = true, dependsOnMethods = "setupDatabase")
     public void setUp(
             @Optional("desktop") String device,
             @Optional("chromium") String browserType) {
@@ -92,7 +92,7 @@ public class BaseTest {
 
     }
 
-    @BeforeClass(alwaysRun = true)
+    @BeforeMethod(alwaysRun = true)
     public void cookieEater () {
         if (baseSteps != null) {
             baseSteps.waitForPageToLoad()
