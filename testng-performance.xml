@@ -4,19 +4,19 @@
 
     <test name="Smoke Tests">
         <classes>
-            <class name="ge.tbc.testautomation.tbcbankapp.performance.PerformanceSmokeTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.performance.tests.LocationsSmokeTestK6"/>
         </classes>
     </test>
 
     <test name="Load Tests">
         <classes>
-            <class name="ge.tbc.testautomation.tbcbankapp.performance.PerformanceLoadTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.performance.tests.LocationsLoadTestK6"/>
         </classes>
     </test>
 
     <test name="Stress Tests">
         <classes>
-            <class name="ge.tbc.testautomation.tbcbankapp.performance.PerformanceStressTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.performance.tests.LocationsStressTestK6"/>
         </classes>
     </test>
 

@@ -7,7 +7,6 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -25,13 +24,7 @@ import java.sql.Statement;
  */
 public class PerformanceBase {
 
-    protected static final Path PROJECT_ROOT = Paths.get(System.getProperty("user.dir"));
-
-    private static final Path DB_PATH     = PROJECT_ROOT.resolve("tbc_map.db");
-    private static final Path SCHEMA_PATH = PROJECT_ROOT.resolve("db/schema.sql");
-    private static final Path SEED_PATH   = PROJECT_ROOT.resolve("db/seed.sql");
-
-    protected static final Path FEEDER_PATH = PROJECT_ROOT.resolve("performance_feeder.csv");
+    protected static final Path FEEDER_PATH = DatabaseUtils.PROJECT_ROOT.resolve("performance_feeder.csv");
 
     @BeforeSuite(alwaysRun = true)
     public void setupPerformanceEnvironment() throws Exception {
@@ -40,18 +33,18 @@ public class PerformanceBase {
     }
 
     private void buildDatabase() throws Exception {
-        Files.deleteIfExists(DB_PATH);
+        Files.deleteIfExists(DatabaseUtils.DB_PATH);
 
-        String jdbcUrl = DatabaseUtils.getJdbcUrl(DB_PATH);
+        String jdbcUrl = DatabaseUtils.getJdbcUrl(DatabaseUtils.DB_PATH);
 
-        DatabaseUtils.executeSqlFile(jdbcUrl, SCHEMA_PATH);
-        DatabaseUtils.executeSqlFile(jdbcUrl, SEED_PATH);
+        DatabaseUtils.executeSqlFile(jdbcUrl, DatabaseUtils.SCHEMA_PATH);
+        DatabaseUtils.executeSqlFile(jdbcUrl, DatabaseUtils.SEED_PATH);
 
-        System.out.println("[PerformanceBase] Database ready at: " + DB_PATH.toAbsolutePath());
+        System.out.println("[PerformanceBase] Database ready at: " + DatabaseUtils.DB_PATH.toAbsolutePath());
     }
 
     private void generateFeederCsv() throws Exception {
-        String jdbcUrl = DatabaseUtils.getJdbcUrl(DB_PATH);
+        String jdbcUrl = DatabaseUtils.getJdbcUrl(DatabaseUtils.DB_PATH);
 
         try (Connection conn = DriverManager.getConnection(jdbcUrl);
              Statement stmt  = conn.createStatement();
