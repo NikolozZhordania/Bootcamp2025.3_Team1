@@ -25,7 +25,12 @@ public class LocationsPage extends CommonPage {
             branchTab,
             hoursCheck,
             addressResults,
-            branchTitle;
+            branchTitle,
+            mondayToFriday,
+            sunday,
+            saturday,
+            allWeek,
+            mondayToFridayAndSaturday;
 
     public LocationsPage(Page page) {
         super(page);
@@ -70,5 +75,16 @@ public class LocationsPage extends CommonPage {
                 .setName("თანხის მიმღები"));
 
         this.locationInput = page.locator("app-atm-branches-section-list-item .tbcx-pw-title");
+        this.mondayToFriday = page.locator("app-atm-branches-section-list-item")
+                .filter(new Locator.FilterOptions().setHasText("ორშაბათი-პარასკევი: 10:00-18:00"));
+        this.saturday =  page.locator("app-atm-branches-section-list-item")
+                .filter(new Locator.FilterOptions().setHasText(" შაბათი: 10:00-14:00 "));
+        this.sunday =  page.locator("app-atm-branches-section-list-item")
+                .filter(new Locator.FilterOptions().setHasText("კვირა"));
+        this.allWeek =  page.locator("app-atm-branches-section-list-item")
+                .filter(new Locator.FilterOptions().setHasText(" სამუშაო საათები -  24/7 "));
+        this.mondayToFridayAndSaturday = page.locator("app-atm-branches-section-list-item")
+                .filter(new Locator.FilterOptions().setHasText("ორშაბათი-პარასკევი: 10:00-18:00"))
+                .filter(new Locator.FilterOptions().setHasText(" შაბათი: 10:00-14:00 "));
     }
 }
