@@ -23,6 +23,8 @@ public class BaseTest {
 
     protected HomeSteps homeSteps;
     protected LocationSteps locationSteps;
+    protected BaseSteps baseSteps;
+
 
     @Parameters({"device", "browser"})
     @BeforeClass(alwaysRun = true)
@@ -56,7 +58,6 @@ public class BaseTest {
 
         createContextAndPage(deviceType);
         initSteps();
-        handleCookies();
     }
 
     private void createContextAndPage(DeviceType deviceType) {
@@ -89,25 +90,19 @@ public class BaseTest {
     private void initSteps() {
         homeSteps = new HomeSteps(page);
         locationSteps = new LocationSteps(page);
+        baseSteps = new BaseSteps(page);
+
     }
 
-    private void handleCookies() {
-        try {
-            CommonPage commonPage = new CommonPage(page);
-            Locator cookieButton = commonPage.cookieAcceptButton;
-
-            cookieButton.waitFor(new Locator.WaitForOptions()
-                    .setState(WaitForSelectorState.VISIBLE)
-                    .setTimeout(3000));
-
-            cookieButton.click();
-            page.waitForTimeout(500);
-            System.out.println("Cookie banner accepted");
-
-        } catch (Exception e) {
-            System.out.println("No cookie banner to dismiss");
+    @BeforeMethod(alwaysRun = true)
+    public void cookieEater () {
+        if (baseSteps != null) {
+            baseSteps.waitForPageToLoad()
+                    .rejectCookieIfExists()
+                    .assertCookieRejected();
         }
     }
+
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {

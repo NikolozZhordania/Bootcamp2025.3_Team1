@@ -12,7 +12,9 @@ public class CommonPage {
             tbcButton,
             dropDownMenuContainer,
             burgerMenu,
-            cookieAcceptButton;
+            cookieAcceptButton,
+            kebabMenuButton,
+            locationsIcon;
 
     public CommonPage(Page page) {
 
@@ -38,5 +40,7 @@ public class CommonPage {
         this.cookieAcceptButton = page.getByRole(AriaRole.BUTTON)
                 .filter(new Locator.FilterOptions().setHasText("თანხმობა"))
                 .first();
+        this.kebabMenuButton = page.locator("button:has(tbcx-icon:has-text('kebab-menu-vertical-outlined'))");
+        this.locationsIcon = page.locator("button:has(tbcx-icon[style*='location-pin-outlined'])");
     }
 }

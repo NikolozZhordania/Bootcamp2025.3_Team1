@@ -424,6 +424,14 @@ public class LocationSteps {
         page.waitForTimeout(1500);
         return this;
     }
+  
+    @Step("Verify ATM list count")
+    public LocationSteps verifyAtmListCount() {
+        int count = locationHelper.getATMListCount();
+        Assert.assertEquals(count, 0, "Negative test failed! Expected 0 ATMs for fake street, but found: " + count);
+        return this;
+    }
+
     @Step("Print locations open Monday to Friday")
     public LocationSteps printMondayToFridayBranches(String label) {
         locationsPage.mondayToFriday.first().waitFor();
