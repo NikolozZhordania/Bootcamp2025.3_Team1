@@ -23,6 +23,7 @@ public class BaseTest extends DBSetUp {
     protected HomeSteps homeSteps;
     protected LocationSteps locationSteps;
     protected BaseSteps baseSteps;
+    protected CurrencyExchangeSteps currencyExchangeSteps;
 
     @Parameters({"device", "browser"})
     @BeforeSuite(alwaysRun = true, dependsOnMethods = "setupDatabase")
@@ -89,6 +90,7 @@ public class BaseTest extends DBSetUp {
         homeSteps = new HomeSteps(page);
         locationSteps = new LocationSteps(page);
         baseSteps = new BaseSteps(page);
+        currencyExchangeSteps = new CurrencyExchangeSteps(page);
 
     }
 
