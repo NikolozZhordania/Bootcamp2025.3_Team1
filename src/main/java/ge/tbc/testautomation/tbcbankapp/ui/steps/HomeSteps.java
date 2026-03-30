@@ -127,4 +127,25 @@ public class HomeSteps {
         }
         return this;
     }
+    @Step("Verify Kebab menu visibility")
+    public HomeSteps verifyKebabMenuVisibility() {
+        assertThat(homePage.kebabMenuButton).isVisible();
+        return this;
+    }
+    @Step("Open Kebab menu")
+    public HomeSteps openKebabMenu() {
+        homePage.kebabMenuButton.click();
+        return this;
+    }
+    @Step("Verify Locations Icon  visibility")
+    public HomeSteps verifyLocationsIconVisibility() {
+        assertThat(homePage.locationsIcon).isVisible();
+        return this;
+    }
+
+    @Step("Open Locations Page")
+    public HomeSteps openLocations() {
+        homePage.locationsIcon.click();
+        return this;
+    }
 }
