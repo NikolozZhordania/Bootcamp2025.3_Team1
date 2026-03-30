@@ -1,9 +1,7 @@
 package ge.tbc.testautomation.tbcbankapp.ui.base;
 
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.options.WaitForSelectorState;
 import ge.tbc.testautomation.tbcbankapp.ui.data.GeoLocationEnum;
-import ge.tbc.testautomation.tbcbankapp.ui.pages.CommonPage;
 import ge.tbc.testautomation.tbcbankapp.ui.steps.*;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.DeviceType;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.GeoLocationRandomizer;
@@ -94,7 +92,7 @@ public class BaseTest {
 
     }
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
     public void cookieEater () {
         if (baseSteps != null) {
             baseSteps.waitForPageToLoad()

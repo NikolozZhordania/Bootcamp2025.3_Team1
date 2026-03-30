@@ -74,7 +74,7 @@ public class LocationsPage extends CommonPage {
         this.moneyInputOption = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions()
                 .setName("თანხის მიმღები"));
 
-        this.locationInput = page.locator("app-atm-branches-section-list-item .tbcx-pw-title");
+        this.locationOption = page.locator("app-atm-branches-section-list-item .tbcx-pw-title");
         this.mondayToFriday = page.locator("app-atm-branches-section-list-item")
                 .filter(new Locator.FilterOptions().setHasText("ორშაბათი-პარასკევი: 10:00-18:00"));
         this.saturday =  page.locator("app-atm-branches-section-list-item")

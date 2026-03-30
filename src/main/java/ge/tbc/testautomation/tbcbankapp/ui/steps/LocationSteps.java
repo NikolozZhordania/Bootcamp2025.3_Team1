@@ -349,18 +349,18 @@ public class LocationSteps {
 
     @Step("Print all location titles")
     public LocationSteps printAllLocationTitles(){
-        locationsPage.locationInput.first().waitFor();
-        for (int i = 0; i < locationsPage.locationInput.count(); i++) {
-            System.out.println(locationsPage.locationInput.nth(i).textContent());
+        locationsPage.locationOption.first().waitFor();
+        for (int i = 0; i < locationsPage.locationOption.count(); i++) {
+            System.out.println(locationsPage.locationOption.nth(i).textContent());
         }
         return this;
     }
 
     @Step("Print first 10 location titles")
     public LocationSteps printTenLocationTitles() {
-        locationsPage.locationInput.first().waitFor();
+        locationsPage.locationOption.first().waitFor();
         for (int i = 0; i < 10; i++) {
-            System.out.println(locationsPage.locationInput.nth(i).textContent());
+            System.out.println(locationsPage.locationOption.nth(i).textContent());
         }
         return this;
     }
