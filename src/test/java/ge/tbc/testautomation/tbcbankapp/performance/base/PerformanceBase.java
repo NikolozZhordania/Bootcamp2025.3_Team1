@@ -1,5 +1,6 @@
 package ge.tbc.testautomation.tbcbankapp.performance;
 
+import ge.tbc.testautomation.tbcbankapp.db.utils.DatabaseUtils;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.FileWriter;
@@ -37,36 +38,20 @@ public class PerformanceBase {
         buildDatabase();
         generateFeederCsv();
     }
+
     private void buildDatabase() throws Exception {
         Files.deleteIfExists(DB_PATH);
 
-        String jdbcUrl = "jdbc:sqlite:" + DB_PATH.toAbsolutePath()
-                .toString()
-                .replace("\\", "/");
+        String jdbcUrl = DatabaseUtils.getJdbcUrl(DB_PATH);
 
-        executeSqlFile(jdbcUrl, SCHEMA_PATH);
-        executeSqlFile(jdbcUrl, SEED_PATH);
+        DatabaseUtils.executeSqlFile(jdbcUrl, SCHEMA_PATH);
+        DatabaseUtils.executeSqlFile(jdbcUrl, SEED_PATH);
 
         System.out.println("[PerformanceBase] Database ready at: " + DB_PATH.toAbsolutePath());
     }
 
-    private void executeSqlFile(String jdbcUrl, Path sqlFile) throws Exception {
-        String sql = Files.readString(sqlFile);
-        try (Connection conn = DriverManager.getConnection(jdbcUrl);
-             Statement stmt  = conn.createStatement()) {
-            for (String statement : sql.split(";")) {
-                String trimmed = statement.trim();
-                if (!trimmed.isEmpty()) {
-                    stmt.execute(trimmed);
-                }
-            }
-        }
-    }
-
     private void generateFeederCsv() throws Exception {
-        String jdbcUrl = "jdbc:sqlite:" + DB_PATH.toAbsolutePath()
-                .toString()
-                .replace("\\", "/");
+        String jdbcUrl = DatabaseUtils.getJdbcUrl(DB_PATH);
 
         try (Connection conn = DriverManager.getConnection(jdbcUrl);
              Statement stmt  = conn.createStatement();
