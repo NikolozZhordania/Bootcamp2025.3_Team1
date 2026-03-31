@@ -88,6 +88,7 @@ public class BaseTest extends DBSetUp {
         homeSteps = new HomeSteps(page);
         locationSteps = new LocationSteps(page);
         baseSteps = new BaseSteps(page);
+        currencyExchangeSteps = new CurrencyExchangeSteps(page);
     }
 
     @BeforeMethod(alwaysRun = true)
