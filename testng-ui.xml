@@ -1,9 +1,28 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="TBC Suite">
+
     <test name="Desktop Tests">
         <parameter name="device" value="desktop"/>
         <parameter name="browser" value="chromium"/>
         <classes>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.CalendarTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.FilterLocations"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.LocationsTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.LocationsCityFilterTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.NegativeFilterTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.RandomizedLocationTests"/>
+        </classes>
+    </test>
+
+    <test name="Desktop Tests">
+        <parameter name="device" value="mobile"/>
+        <parameter name="browser" value="chromium"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.CalendarTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.FilterLocations"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.LocationsTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.LocationsCityFilterTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.NegativeFilterTest"/>
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.RandomizedLocationTests"/>
         </classes>
     </test>

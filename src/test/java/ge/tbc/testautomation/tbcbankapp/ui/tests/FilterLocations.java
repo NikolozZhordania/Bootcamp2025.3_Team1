@@ -17,7 +17,6 @@ public class FilterLocations extends BaseTest {
     @Test(description = "DEV-T2 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
-                .openHomepage()
                 .verifyHomepageLoaded()
                 .verifyMenuVisibility()
                 .openNavigationMenu();

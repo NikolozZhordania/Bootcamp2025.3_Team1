@@ -2,13 +2,14 @@ package ge.tbc.testautomation.tbcbankapp.ui.tests;
 
 import ge.tbc.testautomation.tbcbankapp.ui.base.BaseTest;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.FakerHelper;
+import ge.tbc.testautomation.tbcbankapp.ui.utils.NeedsCookieHandling;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
 @Epic("TBC Bank Web Application")
 @Feature("Locations & ATMs")
 @Test(description = "SCRUM-T6: ATM Search with Invalid Address and Zero Results Validation")
-public class NegativeFilterTest extends BaseTest {
+public class NegativeFilterTest extends BaseTest implements NeedsCookieHandling {
 
     private final String randomStreet = FakerHelper.randomStreetName();
 
@@ -18,15 +19,14 @@ public class NegativeFilterTest extends BaseTest {
     @Test(description = "SCRUM-T6 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
-                .openHomepage()
-                .verifyHomepageLoaded();
+                .verifyHomepageLoaded()
+                .verifyMenuVisibility();
     }
     @Story("Kebab Menu Validation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that the Kebab menu is visible and the Locations option is accessible.")
     @Test(description = "SCRUM-T6 Step 2: Navigation menu access",
-            priority = 2,
-            dependsOnMethods = "homepageAccess")
+            priority = 2)
     public void kebabMenuAccess() {
         homeSteps
                 .verifyKebabMenuVisibility()

@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class RandomizedLocationTests extends BaseTest {
 
     @BeforeClass
-    public void navigate() {
+    public void logging() {
         System.out.println("District: " + currentDistrict.name());
         System.out.println("Lat: " + currentLocation[0] + " | Lng: " + currentLocation[1]);
     }
@@ -21,7 +21,6 @@ public class RandomizedLocationTests extends BaseTest {
     @Test(description = "DEV-T1 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
-                .openHomepage()
                 .verifyHomepageLoaded()
                 .verifyMenuVisibility()
                 .openNavigationMenu();

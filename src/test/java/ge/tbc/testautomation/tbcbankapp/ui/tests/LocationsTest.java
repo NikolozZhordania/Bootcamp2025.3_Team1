@@ -17,7 +17,6 @@ public class LocationsTest extends BaseTest {
     @Test(description = "SCRUM-T1 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
-                .openHomepage()
                 .verifyHomepageLoaded()
                 .verifyMenuVisibility()
                 .openNavigationMenu();
