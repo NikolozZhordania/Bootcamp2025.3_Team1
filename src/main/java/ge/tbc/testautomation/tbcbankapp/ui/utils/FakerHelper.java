@@ -17,4 +17,8 @@ public class FakerHelper {
     public static String randomFullAddress() {
         return faker.address().fullAddress();
     }
+
+    public static String randomString(int length) {
+        return faker.lorem().characters(length, true, false);
+    }
 }
