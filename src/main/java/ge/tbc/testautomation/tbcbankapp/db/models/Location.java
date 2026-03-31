@@ -14,6 +14,10 @@ public class Location {
     private String regionName;
     private boolean worksallday;
 
+    public Location(boolean worksallday) {
+        this.worksallday = worksallday;
+    }
+
     public String getAddress() { return address; }
 
 }

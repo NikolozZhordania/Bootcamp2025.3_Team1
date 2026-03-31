@@ -6,6 +6,7 @@ import ge.tbc.testautomation.tbcbankapp.ui.data.GeoLocationEnum;
 import ge.tbc.testautomation.tbcbankapp.ui.steps.*;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.DeviceType;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.GeoLocationRandomizer;
+import ge.tbc.testautomation.tbcbankapp.ui.utils.NeedsCookieHandling;
 import ge.tbc.testautomation.tbcbankapp.ui.utils.TestContext;
 import org.testng.annotations.*;
 
@@ -26,7 +27,7 @@ public class BaseTest extends DBSetUp {
     protected CurrencyExchangeSteps currencyExchangeSteps;
 
     @Parameters({"device", "browser"})
-    @BeforeSuite(alwaysRun = true, dependsOnMethods = "setupDatabase")
+    @BeforeClass(alwaysRun = true)
     public void setUp(
             @Optional("desktop") String device,
             @Optional("chromium") String browserType) {
@@ -57,6 +58,7 @@ public class BaseTest extends DBSetUp {
 
         createContextAndPage(deviceType);
         initSteps();
+        homeSteps.openHomepage();
     }
 
     private void createContextAndPage(DeviceType deviceType) {
@@ -69,12 +71,8 @@ public class BaseTest extends DBSetUp {
             contextOptions.setViewportSize(null);
         }
 
-        // OPTION 1 — random district
         GeoLocationEnum[] districts = GeoLocationEnum.values();
         currentDistrict = districts[new Random().nextInt(districts.length)];
-
-        // OPTION 2 — specific district
-//        currentDistrict = GeoLocationEnum.VAKE;
 
         currentLocation = GeoLocationRandomizer.getRandomFromDistrict(currentDistrict);
 
@@ -90,19 +88,16 @@ public class BaseTest extends DBSetUp {
         homeSteps = new HomeSteps(page);
         locationSteps = new LocationSteps(page);
         baseSteps = new BaseSteps(page);
-        currencyExchangeSteps = new CurrencyExchangeSteps(page);
-
     }
 
     @BeforeMethod(alwaysRun = true)
-    public void cookieEater () {
-        if (baseSteps != null) {
+    public void cookieEater() {
+        if (this instanceof NeedsCookieHandling && baseSteps != null) {
             baseSteps.waitForPageToLoad()
                     .rejectCookieIfExists()
                     .assertCookieRejected();
         }
     }
-
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {
