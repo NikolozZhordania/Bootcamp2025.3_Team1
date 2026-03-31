@@ -14,7 +14,7 @@
         </classes>
     </test>
 
-    <test name="Desktop Tests">
+    <test name="Mobile Tests">
         <parameter name="device" value="mobile"/>
         <parameter name="browser" value="chromium"/>
         <classes>
