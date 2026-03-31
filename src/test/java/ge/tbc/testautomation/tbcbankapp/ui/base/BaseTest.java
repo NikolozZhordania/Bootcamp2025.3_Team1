@@ -40,8 +40,8 @@ public class BaseTest extends DBSetUp {
         playwright = Playwright.create();
 
         BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
-                .setHeadless(false)
-                .setArgs(java.util.List.of("--start-maximized"));
+                .setHeadless(true)
+                .setArgs(java.util.List.of("--window-size=1920,1080"));
 
         switch (browserType.toLowerCase()) {
             case "firefox":
@@ -68,7 +68,7 @@ public class BaseTest extends DBSetUp {
             contextOptions.setViewportSize(390, 844);
             contextOptions.setUserAgent("Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)");
         } else {
-            contextOptions.setViewportSize(null);
+            contextOptions.setViewportSize(1920, 1080);
         }
 
         GeoLocationEnum[] districts = GeoLocationEnum.values();
