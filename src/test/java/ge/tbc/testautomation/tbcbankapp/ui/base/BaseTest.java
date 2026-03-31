@@ -24,6 +24,7 @@ public class BaseTest extends DBSetUp {
     protected HomeSteps homeSteps;
     protected LocationSteps locationSteps;
     protected BaseSteps baseSteps;
+    protected CurrencyExchangeSteps currencyExchangeSteps;
 
     @Parameters({"device", "browser"})
     @BeforeClass(alwaysRun = true)
