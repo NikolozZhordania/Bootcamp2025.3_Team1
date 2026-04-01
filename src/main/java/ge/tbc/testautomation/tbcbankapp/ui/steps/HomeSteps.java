@@ -107,6 +107,12 @@ public class HomeSteps {
         assertThat(homePage.dropDownMenuContainer).isVisible();
         return this;
     }
+    @Step("Verify tbc card's visibility")
+    public HomeSteps verifyTbcCardsVisibility() {
+        assertThat(forMeMenu.tbcCards).isVisible();
+        forMeMenu.tbcCards.click();
+        return this;
+    }
 
     @Step("Verify Locations option visibility")
     public HomeSteps verifyLocationsOptionVisibility() {

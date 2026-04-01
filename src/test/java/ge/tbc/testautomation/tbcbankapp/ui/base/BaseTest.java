@@ -25,6 +25,8 @@ public class BaseTest extends DBSetUp {
     protected LocationSteps locationSteps;
     protected BaseSteps baseSteps;
     protected CurrencyExchangeSteps currencyExchangeSteps;
+    protected TbcCardsSteps tbcCardsSteps;
+
 
     @Parameters({"device", "browser"})
     @BeforeClass(alwaysRun = true)
@@ -88,7 +90,8 @@ public class BaseTest extends DBSetUp {
         homeSteps = new HomeSteps(page);
         locationSteps = new LocationSteps(page);
         baseSteps = new BaseSteps(page);
-        currencyExchangeSteps = new CurrencyExchangeSteps(page);
+        currencyExchangeSteps = new  CurrencyExchangeSteps(page);
+        tbcCardsSteps = new TbcCardsSteps(page);
     }
 
     @BeforeMethod(alwaysRun = true)

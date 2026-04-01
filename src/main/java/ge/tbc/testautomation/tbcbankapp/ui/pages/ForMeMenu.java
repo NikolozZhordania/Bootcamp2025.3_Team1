@@ -17,12 +17,15 @@ public class ForMeMenu extends CommonPage {
             consumerLoanButton,
             consumerLoanButtonMobile,
             loanCategoryButton,
-            header;
+            header,
+            tbcCards;
 
     public ForMeMenu(Page page) {
         super(page);
 
         this.header = page.getByRole(AriaRole.BANNER);
+        this.tbcCards = page.locator("span.tbcx-pw-mega-menu-sub-item__title",
+                new Page.LocatorOptions().setHasText("თიბისი ბარათი"));
 
         this.locationsButton = header.getByRole(AriaRole.LINK)
                 .filter(new Locator.FilterOptions()
