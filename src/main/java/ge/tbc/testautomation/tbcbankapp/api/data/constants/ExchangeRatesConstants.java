@@ -40,9 +40,9 @@ public class ExchangeRatesConstants {
     }
 
     public static class ConversionValues {
-        public static final double SAMPLE_AMOUNT   = 10.0;
+        public static final double SAMPLE_AMOUNT = 100;
         public static final String FROM_USD        = "usd";
-        public static final String TO_GEL          = "gel";
+        public static final String TO_GEL          = "GEL";
         public static final String INVALID_CURRENCY = "INVALID";
     }
 }
