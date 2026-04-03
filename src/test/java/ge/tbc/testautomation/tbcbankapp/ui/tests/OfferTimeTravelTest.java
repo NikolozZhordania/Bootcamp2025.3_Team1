@@ -12,7 +12,7 @@ public class OfferTimeTravelTest extends BaseTest {
     @Story("Homepage Access")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Open the homepage and verify that the main page elements and navigation menu are visible.")
-    @Test(description = "SCRUM-T9 Step 1: Homepage access", priority = 1)
+    @Test(description = "SCRUM-T17 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
                 .verifyHomepageLoaded()
@@ -23,7 +23,7 @@ public class OfferTimeTravelTest extends BaseTest {
     @Story("Navigation Menu Validation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that the dropdown navigation menu is visible and the Offers option is accessible.")
-    @Test(description = "SCRUM-T9 Step 2: Navigation menu access",
+    @Test(description = "SCRUM-T17 Step 2: Navigation menu access",
             priority = 2,
             dependsOnMethods = "homepageAccess")
     public void navMenuAccess() {
@@ -35,7 +35,7 @@ public class OfferTimeTravelTest extends BaseTest {
     @Story("Offers Page Access")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Open the Offers page and validate the page header and URL are displayed correctly.")
-    @Test(description = "SCRUM-T9 Step 3: Navigate to offers page",
+    @Test(description = "SCRUM-T17 Step 3: Navigate to offers page",
             priority = 3,
             dependsOnMethods = "navMenuAccess")
     public void goToOffersPage() {
@@ -51,7 +51,7 @@ public class OfferTimeTravelTest extends BaseTest {
     @Story("All Offers Page Access")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Navigate to all offers page and assert the offer containers are displayed correctly.")
-    @Test(description = "SCRUM-T9 Step 4: Navigate To All Offers",
+    @Test(description = "SCRUM-T17 Step 4: Navigate To All Offers",
             priority = 4,
             dependsOnMethods = "goToOffersPage")
     public void goToAllOffers(){
@@ -63,7 +63,7 @@ public class OfferTimeTravelTest extends BaseTest {
     @Story("Time Travel Validation")
     @Severity(SeverityLevel.NORMAL)
     @Description("Move time forward by 1 day and verify the countdown decreases.")
-    @Test(description = "SCRUM-T9 Step 5: Time travel and countdown validation",
+    @Test(description = "SCRUM-T17 Step 5: Time travel and countdown validation",
             priority = 5,
             dependsOnMethods = "goToAllOffers")
     public void validateTimeTravelCountdown() {

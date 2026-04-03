@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 public class OffersDataIntegrityTest extends BaseTest {
 
     @Story("Offers Structure")
-    @Description("POST /offer returns 200 with a non-empty list of valid offer objects")
-    @Test(description = "POST /offer returns 200 with valid structure")
+    @Description("Verify that the /offer endpoint returns a valid, non-empty list of offer objects.")
+    @Test(description = "SCRUM-T16 Step 1: Offers API Response Structure Validation")
     public void offersStructureTest() {
         offersSteps
                 .fetchOffers()
@@ -19,8 +19,8 @@ public class OffersDataIntegrityTest extends BaseTest {
     }
 
     @Story("Offer Date Integrity")
-    @Description("Every offer's endDate is strictly after its startDate")
-    @Test(description = "endDate is always after startDate for every active offer")
+    @Description("Verify that for every offer, the endDate is chronologically after the startDate.")
+    @Test(description = "SCRUM-T16 Step 2: Offers Logical Date Range Validation")
     public void endDateAfterStartDateTest() {
         offersSteps
                 .fetchOffers()
@@ -29,8 +29,8 @@ public class OffersDataIntegrityTest extends BaseTest {
     }
 
     @Story("Offer Date Integrity")
-    @Description("No offer in the active list has an endDate that has already passed in Tbilisi time")
-    @Test(description = "Active offers must not have expired endDates")
+    @Description("Verify that no offers returned in the active list have an endDate in the past.")
+    @Test(description = "SCRUM-T16 Step 3: Active Offer Expiration Check")
     public void noExpiredOffersInActiveListTest() {
         offersSteps
                 .fetchOffers()
@@ -39,8 +39,8 @@ public class OffersDataIntegrityTest extends BaseTest {
     }
 
     @Story("Offer Countdown Integrity")
-    @Description("Remaining days calculated from endDate must be >= 0 for all active offers in Tbilisi timezone")
-    @Test(description = "Remaining days derived from endDate are non-negative for all active offers")
+    @Description("Verify that the calculated remaining days for all offers is a non-negative value.")
+    @Test(description = "SCRUM-T16 Step 4: Countdown Value Integrity Check")
     public void remainingDaysArePositiveTest() {
         offersSteps
                 .fetchOffers()
