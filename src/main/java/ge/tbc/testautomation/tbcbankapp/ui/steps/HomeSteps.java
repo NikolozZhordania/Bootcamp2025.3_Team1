@@ -109,8 +109,14 @@ public class HomeSteps {
     }
     @Step("Verify tbc card's visibility")
     public HomeSteps verifyTbcCardsVisibility() {
-        assertThat(forMeMenu.tbcCards).isVisible();
-        forMeMenu.tbcCards.click();
+        if (TestContext.getDevice() == DeviceType.DESKTOP) {
+            assertThat(forMeMenu.tbcCards).isVisible();
+            forMeMenu.tbcCards.click();
+        } else {
+            assertThat(forMeMenu.tbcCardsDropdown).isVisible();
+            forMeMenu.tbcCardsDropdown.click();
+            forMeMenu.tbcCards.click();
+        }
         return this;
     }
 
