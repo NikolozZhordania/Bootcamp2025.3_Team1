@@ -5,7 +5,7 @@ import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
 @Feature("Offers API")
-public class OffersTest {
+public class OffersDataIntegrityTest {
 
     @Story("Offers Structure")
     @Description("POST /offer returns 200 with a non-empty list of valid offer objects")
