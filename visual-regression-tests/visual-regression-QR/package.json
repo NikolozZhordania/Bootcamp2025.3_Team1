@@ -1,0 +1,21 @@
+{
+  "name": "visual-regression",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "vrt:reference": "backstop reference --config=backstop.json",
+    "vrt:test": "backstop test --config=backstop.json",
+    "vrt:approve": "backstop approve --config=backstop.json",
+    "vrt:reference:qr": "backstop reference --config=backstop_qr.json",
+    "vrt:test:qr": "backstop test --config=backstop_qr.json",
+    "vrt:approve:qr": "backstop approve --config=backstop_qr.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "backstopjs": "^6.3.25"
+  }
+}

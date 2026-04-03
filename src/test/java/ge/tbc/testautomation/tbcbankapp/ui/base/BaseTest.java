@@ -42,8 +42,8 @@ public class BaseTest extends DBSetUp {
         playwright = Playwright.create();
 
         BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
-                .setHeadless(true)
-                .setArgs(java.util.List.of("--window-size=1920,1080"));
+                .setHeadless(false)
+                .setArgs(java.util.List.of("--start-maximized"));
 
         switch (browserType.toLowerCase()) {
             case "firefox":

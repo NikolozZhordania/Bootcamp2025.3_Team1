@@ -1,0 +1,50 @@
+{
+  "id": "visual-regression-Randomized-Locations",
+  "onBeforeScript": "playwright/onBefore.js",
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1200
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "homepage_nav_open",
+      "url": "https://tbcbank.ge/ka/",
+      "onReadyScript": "onReadyHomepageNav.js",
+      "delay": 5000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": true,
+      "selectors": ["viewport"]
+    },
+    {
+      "label": "locations_page",
+      "url": "https://tbcbank.ge/ka/",
+      "onReadyScript": "onReadyLocationsPage.js",
+      "delay": 8000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": true,
+      "selectors": ["viewport"]
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "engine": "playwright",
+  "engineOptions": {
+    "browser": "chromium",
+    "args": [
+      "--no-sandbox",
+      "--disable-blink-features=AutomationControlled"
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+  },
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

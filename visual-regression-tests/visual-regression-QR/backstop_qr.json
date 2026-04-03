@@ -1,0 +1,68 @@
+{
+  "id": "tbc_qr_navigation",
+  "onBeforeScript": "onBefore.js",
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1200
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "homepage_dropdown",
+      "url": "https://tbcbank.ge/ka/",
+      "onReadyScript": "pages/onReadyHomepageDropdown.js",
+      "delay": 5000,
+      "misMatchThreshold": 3,
+      "requireSameDimensions": true,
+      "selectors": ["viewport"]
+    },
+    {
+      "label": "tbc_cards_page",
+      "url": "https://tbcbank.ge/ka/",
+      "onReadyScript": "onReadyTbcCards.js",
+      "delay": 2000,
+      "misMatchThreshold": 3,
+      "requireSameDimensions": true,
+      "selectors": ["viewport"]
+    },
+    {
+      "label": "qr_code_visible",
+      "url": "https://tbcbank.ge/ka/",
+      "onReadyScript": "onReadyQRVisible.js",
+      "delay": 2000,
+      "misMatchThreshold": 3,
+      "requireSameDimensions": true,
+      "selectors": ["viewport"]
+    },
+    {
+      "label": "qr_url_navigated",
+      "url": "https://tbcbank.ge/ka/",
+      "onReadyScript": "onReadyQRNavigation.js",
+      "delay": 5000,
+      "misMatchThreshold": 3,
+      "requireSameDimensions": true,
+      "selectors": ["viewport"]
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "engine": "playwright",
+  "engineOptions": {
+    "browser": "chromium",
+    "args": [
+      "--no-sandbox",
+      "--disable-blink-features=AutomationControlled"
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+  },
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
