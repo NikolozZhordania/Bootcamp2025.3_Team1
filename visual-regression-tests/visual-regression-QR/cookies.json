@@ -1,0 +1,10 @@
+[
+  {
+    "name": "cookieConsent",
+    "value": "true",
+    "domain": "tbcbank.ge",
+    "path": "/",
+    "httpOnly": false,
+    "secure": false
+  }
+]
