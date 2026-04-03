@@ -1,17 +1,18 @@
 package ge.tbc.testautomation.tbcbankapp.api.tests;
 
+import ge.tbc.testautomation.tbcbankapp.api.base.BaseTest;
 import ge.tbc.testautomation.tbcbankapp.api.steps.OffersSteps;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
 @Feature("Offers API")
-public class OffersDataIntegrityTest {
+public class OffersDataIntegrityTest extends BaseTest {
 
     @Story("Offers Structure")
     @Description("POST /offer returns 200 with a non-empty list of valid offer objects")
     @Test(description = "POST /offer returns 200 with valid structure")
     public void offersStructureTest() {
-        new OffersSteps()
+        offersSteps
                 .fetchOffers()
                 .validateOffersNotEmpty()
                 .validateOfferFields();
@@ -21,7 +22,7 @@ public class OffersDataIntegrityTest {
     @Description("Every offer's endDate is strictly after its startDate")
     @Test(description = "endDate is always after startDate for every active offer")
     public void endDateAfterStartDateTest() {
-        new OffersSteps()
+        offersSteps
                 .fetchOffers()
                 .validateOffersNotEmpty()
                 .validateEndDateAfterStartDate();
@@ -31,7 +32,7 @@ public class OffersDataIntegrityTest {
     @Description("No offer in the active list has an endDate that has already passed in Tbilisi time")
     @Test(description = "Active offers must not have expired endDates")
     public void noExpiredOffersInActiveListTest() {
-        new OffersSteps()
+        offersSteps
                 .fetchOffers()
                 .validateOffersNotEmpty()
                 .validateNoOffersExpired();
@@ -41,7 +42,7 @@ public class OffersDataIntegrityTest {
     @Description("Remaining days calculated from endDate must be >= 0 for all active offers in Tbilisi timezone")
     @Test(description = "Remaining days derived from endDate are non-negative for all active offers")
     public void remainingDaysArePositiveTest() {
-        new OffersSteps()
+        offersSteps
                 .fetchOffers()
                 .validateOffersNotEmpty()
                 .validateRemainingDaysArePositive();

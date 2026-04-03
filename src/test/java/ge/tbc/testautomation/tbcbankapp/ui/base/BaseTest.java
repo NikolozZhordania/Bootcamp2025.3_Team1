@@ -26,6 +26,7 @@ public class BaseTest extends DBSetUp {
     protected BaseSteps baseSteps;
     protected CurrencyExchangeSteps currencyExchangeSteps;
     protected TbcCardsSteps tbcCardsSteps;
+    protected OffersSteps offersSteps;
 
 
     @Parameters({"device", "browser"})
@@ -42,8 +43,8 @@ public class BaseTest extends DBSetUp {
         playwright = Playwright.create();
 
         BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
-                .setHeadless(true)
-                .setArgs(java.util.List.of("--window-size=1920,1080"));
+                .setHeadless(false)
+                .setArgs(java.util.List.of("--start-maximized"));
 
         switch (browserType.toLowerCase()) {
             case "firefox":
@@ -92,6 +93,7 @@ public class BaseTest extends DBSetUp {
         baseSteps = new BaseSteps(page);
         currencyExchangeSteps = new  CurrencyExchangeSteps(page);
         tbcCardsSteps = new TbcCardsSteps(page);
+        offersSteps = new OffersSteps(page);
     }
 
     @BeforeMethod(alwaysRun = true)

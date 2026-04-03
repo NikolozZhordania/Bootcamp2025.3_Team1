@@ -5,6 +5,7 @@ public class Constants {
     public static class URLs {
         public static final String APP                  = "https://tbcbank.ge/";
         public static final String LOCATIONS_PAGE_URL       = APP + "ka/atms&branches";
+        public static final String OFFERS_PAGE_URL       = APP + "ka/offers";
     }
 
     public static class LocationData {
@@ -53,5 +54,10 @@ public class Constants {
 
     public static class APIKeys {
         public static final String GOOGLE_MAPS_API_KEY = "AIzaSyDxk3oV23GUpv89ANJEiIypf62MFbW2XgM";
+    }
+
+    public static class OffersData {
+        public static final String TARGET_OFFER = "Nova";
+        public static final int DAYS_INTO_FUTURE = 1;
     }
 }
