@@ -57,7 +57,7 @@ public class Constants {
     }
 
     public static class OffersData {
-        public static final String TARGET_OFFER = "Nova";
+        public static final String TARGET_OFFER = "პიკოლა";
         public static final int DAYS_INTO_FUTURE = 1;
     }
 }
