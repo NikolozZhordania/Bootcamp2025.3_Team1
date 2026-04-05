@@ -394,18 +394,20 @@ Bootcamp2025.3_Team1/
 
 ```mermaid
 flowchart LR
-    B([🏗️ base/\nBaseTest]) --> T
-    T([🧪 tests/]) --> S([⚙️ steps/\nFluent API])
-    S --> P([📄 pages/\nLocators only])
-    P --> PW([🎭 Playwright\nPage])
-    T --> D([📦 data/\nConstants])
-    S --> D
+    B([🏗️ base/\nBaseTest]) -->|extends| T([🧪 tests/])
+
+    C([📦 constants/\nTest Data]) -->|injected into| T
+
+    L([📄 pages/\nLocators only]) -->|used by| S([⚙️ steps/\nFluent API])
+    S -->|called by| T
+
+    T --> PW([🎭 Playwright\nPage])
 
     style B fill:#4a4e69,color:#fff
     style T fill:#2d6a4f,color:#fff
     style S fill:#1d3557,color:#fff
-    style P fill:#457b9d,color:#fff
-    style D fill:#6d6875,color:#fff
+    style L fill:#457b9d,color:#fff
+    style C fill:#6d6875,color:#fff
     style PW fill:#222,color:#fff
 ```
 
