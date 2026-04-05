@@ -138,6 +138,7 @@ This team was assigned **Team 1 – Locations & ATMs** on [tbcbank.ge](https://t
       <sub>
         Homepage & nav menu<br/>
         Locations page<br/>
+        Tbc Cards page(QR Code)<br/>
         Branch & ATM filters<br/>
         Working hours calendar<br/>
         Currency exchange flow<br/>
@@ -268,20 +269,38 @@ This team was assigned **Team 1 – Locations & ATMs** on [tbcbank.ge](https://t
 flowchart TD
     A[👨‍💻 Developer Push / MR] --> B[⚙️ GitLab CI Pipeline]
 
-    B --> C[🖥️ UI Tests\nPlaywright + TestNG]
-    B --> D[🔌 API Tests\nRest Assured]
-    B --> E[⚡ Performance Tests\nK6]
-    B --> F[👁️ Visual Regression\nPlaywright Snapshots]
+    subgraph test["🧪 Test Stage (Parallel)"]
+        C[🖥️ UI Tests\nPlaywright + TestNG]
+        D[🔌 API Tests\nRest Assured]
+        E[⚡ Performance Tests\nK6 · Manual]
+        F[👁️ Visual Regression\nPlaywright Snapshots]
+    end
 
-    C --> G[📊 Allure Report]
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+
+    subgraph report["📊 Report Stage"]
+        G[📊 Allure Report\nmvn allure:report]
+    end
+
+    C --> G
     D --> G
     E --> G
     F --> G
 
-    G --> H[📁 Artifact Upload]
-    G --> I{All Pass?}
-    I -- ✅ Yes --> J[Pipeline Green]
-    I -- ❌ No --> K[Notify Team]
+    subgraph deploy["🚀 Deploy Stage"]
+        H[📁 Artifact Upload]
+        I[🌐 GitLab Pages\nAllure Published]
+    end
+
+    G --> H
+    G --> I
+
+    I --> J{All Pass?}
+    J -- ✅ Yes --> K[Pipeline Green]
+    J -- ❌ No --> L[Notify Team]
 
     subgraph "🧱 Framework Layers"
         direction LR
