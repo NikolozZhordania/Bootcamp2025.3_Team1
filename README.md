@@ -12,7 +12,7 @@
 
 </div>
 
-<!-- PROJECT LOGO / HEADER -->
+<!-- PROJECT HEADER -->
 <br />
 <div align="center">
   <h1>🏦 TBC Bank — End-to-End Test Automation Suite</h1>
@@ -61,7 +61,7 @@
 
 This project is the **final deliverable** of TBC Bootcamp 2025.3 — a complete, production-grade automation workflow targeting the **Locations & ATMs** feature of [tbcbank.ge](https://tbcbank.ge).
 
-The team operated in a **real Agile environment**: daily standups on Discord, sprint planning on Jira, feature branches with pull requests into `main`, and automated CI/CD pipelines ensuring every merge was validated automatically.
+The team operated in a **real Agile environment**: daily standups on Discord, sprint planning on Jira, feature branches with merge requests into `main`, and automated GitLab CI pipelines ensuring every merge was validated automatically.
 
 **What makes this project stand out:**
 
@@ -81,40 +81,34 @@ The team operated in a **real Agile environment**: daily standups on Discord, sp
 <table>
   <tr>
     <td align="center" width="160">
-      <img src="https://github.com/NikolozZhordania.png" width="80" style="border-radius:50%"/><br/>
+      <img src="https://github.com/NikolozZhordania.png" width="80" style="border-radius:50%"/><br/><br/>
       <b>Nikoloz Zhordania</b><br/>
-      <a href="https://github.com/NikolozZhordania">@NikolozZhordania</a><br/>
-      <sub>👑 Team Captain<br/>Setup & CI/CD</sub>
+      <a href="https://github.com/NikolozZhordania">@NikolozZhordania</a>
     </td>
     <td align="center" width="160">
-      <img src="https://github.com/LexoMeshveliani.png" width="80" style="border-radius:50%"/><br/>
+      <img src="https://github.com/LexoMeshveliani.png" width="80" style="border-radius:50%"/><br/><br/>
       <b>Lekso Meshveliani</b><br/>
-      <a href="https://github.com/LexoMeshveliani">@LexoMeshveliani</a><br/>
-      <sub>📋 Scenarios<br/>& Bug Reporting</sub>
+      <a href="https://github.com/LexoMeshveliani">@LexoMeshveliani</a>
     </td>
     <td align="center" width="160">
-      <img src="https://github.com/NikaButbaia.png" width="80" style="border-radius:50%"/><br/>
+      <img src="https://github.com/NikaButbaia.png" width="80" style="border-radius:50%"/><br/><br/>
       <b>Nika Butbaia</b><br/>
-      <a href="https://github.com/NikaButbaia">@NikaButbaia</a><br/>
-      <sub>🖥️ UI Automation</sub>
+      <a href="https://github.com/NikaButbaia">@NikaButbaia</a>
     </td>
   </tr>
   <tr>
     <td align="center" width="160">
-      <img src="https://github.com/mariamarsenidze.png" width="80" style="border-radius:50%"/><br/>
+      <img src="https://github.com/mariamarsenidze.png" width="80" style="border-radius:50%"/><br/><br/>
       <b>Mariam Arsenidze</b><br/>
-      <a href="https://github.com/mariamarsenidze">@mariamarsenidze</a><br/>
-      <sub>🖥️ UI Automation</sub>
+      <a href="https://github.com/mariamarsenidze">@mariamarsenidze</a>
     </td>
     <td align="center" width="160">
-      <img src="https://github.com/identicons/NikolozChixladze.png" width="80" style="border-radius:50%"/><br/>
-      <b>Nikoloz Chixladze</b><br/>
-      <sub>🔌 API &<br/>Performance Tests</sub>
+      <img src="https://github.com/identicons/NikolozChixladze.png" width="80" style="border-radius:50%"/><br/><br/>
+      <b>Nikoloz Chixladze</b>
     </td>
     <td align="center" width="160">
-      <img src="https://github.com/identicons/JimusiAxubaria.png" width="80" style="border-radius:50%"/><br/>
-      <b>Jimusi Axubaria</b><br/>
-      <sub>🤖 AI Task<br/>& Presentation</sub>
+      <img src="https://github.com/identicons/JimusiAxubaria.png" width="80" style="border-radius:50%"/><br/><br/>
+      <b>Jimusi Axubaria</b>
     </td>
   </tr>
 </table>
@@ -126,7 +120,7 @@ The team operated in a **real Agile environment**: daily standups on Discord, sp
 
 | 💬 Discord | 📋 Jira | 🌿 GitHub |
 |:---:|:---:|:---:|
-| Daily standups & pair programming calls | Sprint planning, issue tracking, task distribution | Feature branches → Pull Requests → `main` |
+| Daily standups & pair programming calls | Sprint planning, issue tracking, task distribution | Feature branches → Merge Requests → `main` |
 
 </div>
 
@@ -139,48 +133,49 @@ The team operated in a **real Agile environment**: daily standups on Discord, sp
 This team was assigned **Team 1 – Locations & ATMs** on [tbcbank.ge](https://tbcbank.ge).
 
 <div align="center">
-
 <table>
   <tr>
     <td align="center" width="200">
       <h3>🖥️ UI</h3>
       <sub>
-        Homepage access<br/>
-        Navigation menu<br/>
+        Homepage & nav menu<br/>
         Locations page<br/>
         Branch & ATM filters<br/>
         Working hours calendar<br/>
+        Currency exchange flow<br/>
         Edge case inputs
       </sub>
     </td>
     <td align="center" width="200">
       <h3>🔌 API</h3>
       <sub>
-        Offers endpoint structure<br/>
-        Date integrity checks<br/>
-        Expiration validation<br/>
-        Countdown value integrity
+        Offers date integrity<br/>
+        Exchange rate consistency<br/>
+        TBC ID / OAuth / CIBA<br/>
+        Financial report metadata<br/>
+        Countdown validation
       </sub>
     </td>
     <td align="center" width="200">
       <h3>⚡ Performance</h3>
       <sub>
-        K6 load testing<br/>
-        Key user flow stress tests<br/>
-        Response time thresholds
+        Smoke baseline (ka-GE)<br/>
+        Stress / breaking point<br/>
+        Load under 150 VUs<br/>
+        ATM & Branch API coverage
       </sub>
     </td>
     <td align="center" width="200">
       <h3>👁️ Visual Regression</h3>
       <sub>
-        Screenshot comparisons<br/>
-        Layout consistency checks<br/>
+        Navigation menu stability<br/>
+        Locations page consistency<br/>
+        TBC Cards & QR code flow<br/>
         Cross-run diff detection
       </sub>
     </td>
   </tr>
 </table>
-
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -198,7 +193,7 @@ This team was assigned **Team 1 – Locations & ATMs** on [tbcbank.ge](https://t
 [![RestAssured][restassured-shield]][restassured-url]
 [![K6][k6-shield]][k6-url]
 [![Allure][allure-shield]][allure-url]
-[![GitHub Actions][actions-shield]][actions-url]
+[![GitLab CI][gitlab-shield]][gitlab-url]
 [![Jira][jira-shield]][jira-url]
 
 </div>
@@ -229,7 +224,12 @@ This team was assigned **Team 1 – Locations & ATMs** on [tbcbank.ge](https://t
   <tr>
     <td><b>Performance</b></td>
     <td>K6</td>
-    <td>Load & stress testing scenarios</td>
+    <td>Load, smoke & stress testing scenarios</td>
+  </tr>
+  <tr>
+    <td><b>Visual Regression</b></td>
+    <td>Playwright Snapshots</td>
+    <td>Screenshot comparison across runs</td>
   </tr>
   <tr>
     <td><b>Reporting</b></td>
@@ -238,13 +238,13 @@ This team was assigned **Team 1 – Locations & ATMs** on [tbcbank.ge](https://t
   </tr>
   <tr>
     <td><b>CI/CD</b></td>
-    <td>GitHub Actions</td>
-    <td>Automated test runs on every push / PR</td>
+    <td>GitLab CI</td>
+    <td>Automated test runs on every push / MR</td>
   </tr>
   <tr>
     <td><b>Project Mgmt</b></td>
-    <td>Jira</td>
-    <td>Issues, sprints, task tracking</td>
+    <td>Jira + Zephyr Scale</td>
+    <td>Issues, sprints, test scenario management</td>
   </tr>
   <tr>
     <td><b>Build</b></td>
@@ -260,12 +260,12 @@ This team was assigned **Team 1 – Locations & ATMs** on [tbcbank.ge](https://t
 
 ```mermaid
 flowchart TD
-    A[👨‍💻 Developer Push / PR] --> B[⚙️ GitHub Actions CI]
+    A[👨‍💻 Developer Push / MR] --> B[⚙️ GitLab CI Pipeline]
 
     B --> C[🖥️ UI Tests\nPlaywright + TestNG]
     B --> D[🔌 API Tests\nRest Assured]
     B --> E[⚡ Performance Tests\nK6]
-    B --> F[👁️ Visual Regression]
+    B --> F[👁️ Visual Regression\nPlaywright Snapshots]
 
     C --> G[📊 Allure Report]
     D --> G
@@ -273,19 +273,25 @@ flowchart TD
     F --> G
 
     G --> H[📁 Artifact Upload]
-    G --> I[✅ Pass / ❌ Fail Status]
+    G --> I{All Pass?}
+    I -- ✅ Yes --> J[Pipeline Green]
+    I -- ❌ No --> K[Notify Team]
 
-    subgraph "🧱 Framework Structure"
-        J[Tests] --> K[Steps\nFluent API]
-        K --> L[Pages\nPage Object Model]
-        L --> M[Playwright Page]
-        J --> N[Data / Constants]
+    subgraph "🧱 Framework Layers"
+        direction LR
+        O([base/]) --> T([tests/])
+        T --> S([steps/])
+        S --> P([pages/])
+        P --> PW([Playwright])
+        T --> N([data/])
+        S --> N
     end
 
     subgraph "🛠️ Dev Workflow"
-        O[📋 Jira Issue] --> P[🌿 Feature Branch]
-        P --> Q[🔁 Pull Request]
-        Q --> R[🔀 Merge to main]
+        direction LR
+        Q([📋 Jira Issue]) --> R([🌿 Feature Branch])
+        R --> MR([🔁 Merge Request])
+        MR --> Main([🔀 main])
     end
 ```
 
@@ -298,50 +304,87 @@ flowchart TD
 ```
 Bootcamp2025.3_Team1/
 │
-├── 📁 .github/
-│   └── workflows/              # GitHub Actions CI/CD pipelines
+├── 📁 src/
+│   │
+│   ├── 📁 main/
+│   │   ├── java/ge/tbc/testautomation/tbcbankapp/
+│   │   │   ├── 📂 api/
+│   │   │   │   ├── client/       # HTTP client setup
+│   │   │   │   ├── data/         # API constants & test data
+│   │   │   │   ├── steps/        # API step classes (fluent)
+│   │   │   │   └── utils/        # API helpers
+│   │   │   │
+│   │   │   ├── 📂 db/
+│   │   │   │   ├── mappers/      # MyBatis mappers
+│   │   │   │   ├── models/       # DB model classes
+│   │   │   │   └── utils/        # DB utilities
+│   │   │   │
+│   │   │   ├── 📂 performance/
+│   │   │   │   ├── data/         # Performance test data
+│   │   │   │   ├── servies/      # K6 service configs
+│   │   │   │   ├── steps/        # Performance step classes
+│   │   │   │   └── utils/        # Performance utilities
+│   │   │   │
+│   │   │   └── 📂 ui/
+│   │   │       ├── data/         # UI constants & test data
+│   │   │       ├── pages/        # Page Object Model classes
+│   │   │       ├── steps/        # UI step classes (fluent)
+│   │   │       └── utils/        # UI helpers
+│   │   │
+│   │   └── resources/
+│   │       ├── performance/      # K6 scripts
+│   │       └── mybatis-config.xml
+│   │
+│   └── 📁 test/
+│       └── java/ge/tbc/testautomation/tbcbankapp/
+│           ├── 📂 api/
+│           │   ├── base/         # API BaseTest
+│           │   └── tests/        # API test classes
+│           │
+│           ├── 📂 base/          # Shared BaseTest
+│           │
+│           ├── 📂 performance/
+│           │   ├── base/         # Performance BaseTest
+│           │   └── tests/        # Performance test classes
+│           │
+│           └── 📂 ui/
+│               ├── base/         # UI BaseTest
+│               └── tests/        # UI test classes
 │
-├── 📁 src/main/java/ge/tbc/testautomation/tbcbankapp/
-│   ├── 📂 base/                # BaseTest — browser setup & teardown
-│   ├── 📂 data/                # Constants, test data, URLs
-│   ├── 📂 pages/               # Page Objects — locators & raw Playwright
-│   ├── 📂 steps/               # Step classes — fluent business-level actions
-│   ├── 📂 tests/               # Test classes — UI, API, Performance
-│   └── 📂 utils/               # Helpers & shared utilities
+├── 📁 visual-regression-tests/   # Snapshot comparison tests
 │
 ├── 📁 ai/
-│   ├── prompt.txt              # AI prompt used for code review
-│   ├── result.txt              # Raw AI-generated output
-│   └── analysis.md             # Team evaluation of AI quality
+│   ├── prompt.txt                # AI prompt used for code review
+│   ├── result.txt                # Raw AI-generated output
+│   └── analysis.md               # Team evaluation of AI quality
 │
-├── 📁 bug-report/              # Real bugs found on tbcbank.ge
-├── 📁 zephyr/                  # Zephyr Scale scenario exports
-├── 📁 allure-results/          # Generated Allure report data
-│
+├── 📁 bug-report/                # Real bugs found on tbcbank.ge
+├── 📁 zephyr/                    # Zephyr Scale scenario exports
+├── 📁 allure-results/            # Generated Allure report data
 ├── README.md
 └── pom.xml
 ```
 
-### 📦 Package Architecture
+### 📦 Package Dependency Flow
 
 ```mermaid
 flowchart LR
-    T[🧪 tests/] --> S[⚙️ steps/]
-    S --> P[📄 pages/]
-    P --> PW[🎭 Playwright Page]
-    T --> D[📦 data/\nConstants & TestData]
+    B([🏗️ base/\nBaseTest]) --> T
+    T([🧪 tests/]) --> S([⚙️ steps/\nFluent API])
+    S --> P([📄 pages/\nLocators only])
+    P --> PW([🎭 Playwright\nPage])
+    T --> D([📦 data/\nConstants])
     S --> D
-    B[🏗️ base/\nBaseTest] --> T
 
+    style B fill:#4a4e69,color:#fff
     style T fill:#2d6a4f,color:#fff
     style S fill:#1d3557,color:#fff
     style P fill:#457b9d,color:#fff
     style D fill:#6d6875,color:#fff
-    style B fill:#4a4e69,color:#fff
-    style PW fill:#333,color:#fff
+    style PW fill:#222,color:#fff
 ```
 
-> **Rule:** No locators in steps/tests. No business logic in pages. All values from `data/`.
+> **Convention:** No locators in steps or tests · No business logic in pages · All values sourced from `data/`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -349,18 +392,35 @@ flowchart LR
 
 ## Test Scenarios
 
-The team designed and automated scenarios across all testing layers, following proper positive / negative / edge-case structure as required by Zephyr Scale.
+All **21 scenarios** were designed in **Zephyr Scale** covering UI, API, Performance and Visual Regression layers — every single one automated and passing in CI.
 
-**Sample Scenario Overview (Locations Feature):**
+<div align="center">
 
-| ID | Scenario | Type | Status |
-|----|----------|------|--------|
-| DEV-T1 | Homepage loads and nav menu is visible | Positive | ✅ Automated |
-| DEV-T2 | Navigation dropdown shows Locations option | Positive | ✅ Automated |
-| DEV-T3 | Locations page loads with correct URL and header | Positive | ✅ Automated |
-| DEV-T4 | Branch calendar groups by working hours correctly | Positive | ✅ Automated |
-| SCRUM-T8 | Whitespace input in ATM search returns unchanged list | Edge Case | ✅ Automated |
-| SCRUM-T16 | Offers API: valid structure, date integrity, no expired offers | API | ✅ Automated |
+| ID | Scenario | Layer | Status |
+|----|----------|-------|--------|
+| SCRUM-T1 | Locations — Nearest ATM Selection and Location Validation via Geocoding API | 🖥️ UI | ✅ Automated |
+| SCRUM-T2 | ATM & Branch API — Load Test under 150 Virtual Users (Production-like) | ⚡ Performance | ✅ Done |
+| SCRUM-T3 | Locations — Branch Selection with District Search and 24/7 Availability Validation | 🖥️ UI | ✅ Automated |
+| SCRUM-T4 | ATM & Branch API — Smoke Test · Baseline Availability (ka-GE) | ⚡ Performance | ✅ Done |
+| SCRUM-T5 | ATM & Branch API — Stress Test · Breaking Point Analysis | ⚡ Performance | ✅ Done |
+| SCRUM-T6 | Locations — ATM Search with Invalid Address and Zero Results Validation | 🖥️ UI | ✅ Automated |
+| SCRUM-T7 | Locations — ATM List Filtering by City Dropdown and Validation via Geocoding API | 🖥️ UI | ✅ Automated |
+| SCRUM-T8 | ATM Search — Non-Empty Result Set Returned for Whitespace-Only Location Input | 🖥️ UI | ✅ Automated |
+| SCRUM-T9 | ATM Search — UI Remains Stable When Location Input Exceeds Maximum Length | 🖥️ UI | ✅ Automated |
+| SCRUM-T10 | Exchange Rates API — Commercial vs Official Conversion Consistency For Dynamically Selected Currency | 🔌 API | ✅ Automated |
+| SCRUM-T11 | Locations — Branch & Money Input Calendar Validation | 🖥️ UI | ✅ Automated |
+| SCRUM-T12 | Abroad Money Transfer — Currency Exchange Validation | 🖥️ UI | ✅ Automated |
+| SCRUM-T13 | QR Code Navigation — TBC Cards QR Verification | 🖥️ UI | ✅ Automated |
+| SCRUM-T14 | Randomized Location Search — 10 Closest ATMs, Branches and Money Input Devices | 🖥️ UI | ✅ Automated |
+| SCRUM-T15 | Locations — Branch Search and Selection | 🖥️ UI | ✅ Automated |
+| SCRUM-T16 | Offers API — Active TBC Card Offers Date Integrity and Countdown Validation | 🔌 API | ✅ Automated |
+| SCRUM-T17 | Offers — Countdown Integrity and Time Travel Validation | 🔌 API | ✅ Automated |
+| SCRUM-T18 | TBC ID API — OpenID, JWKS, OAuth, CIBA & Userinfo Validation | 🔌 API | ✅ Automated |
+| SCRUM-T19 | Visual Regression — Navigation Menu & Locations Page UI Consistency | 👁️ Visual | ✅ Automated |
+| SCRUM-T20 | Visual Regression — TBC Cards Flow, QR Code & Redirect UI Validation | 👁️ Visual | ✅ Automated |
+| SCRUM-T21 | Financial Reports API — File Integrity and Metadata Validation For All Downloadable Reports | 🔌 API | ✅ Automated |
+
+</div>
 
 > Full scenario export available in `/zephyr/`
 
@@ -407,22 +467,22 @@ mvn clean install -DskipTests
 
 **Run all UI tests (headed):**
 ```sh
-mvn test -Dtest=CalendarTest,LocationsTest
+mvn test -Dtest="**/ui/tests/**"
 ```
 
 **Run all UI tests (headless):**
 ```sh
-mvn test -Dheadless=true
+mvn test -Dheadless=true -Dtest="**/ui/tests/**"
 ```
 
 **Run API tests:**
 ```sh
-mvn test -Dtest=OffersDataIntegrityTest
+mvn test -Dtest="**/api/tests/**"
 ```
 
 **Run performance tests:**
 ```sh
-k6 run tests/performance/locations-load-test.js
+mvn test -Dtest="**/performance/tests/**"
 ```
 
 **Run full suite in parallel:**
@@ -441,18 +501,31 @@ allure serve allure-results
 
 ## CI/CD
 
-All tests are integrated with **GitHub Actions** and run automatically on every push and pull request to `main`.
-
-[![CI/CD Pipeline](https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/actions/workflows/ci.yml/badge.svg)](https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/actions)
+All tests are integrated with **GitLab CI** and run automatically on every push and merge request to `main`.
 
 **Pipeline includes:**
+
 - ✅ Headless UI test execution
 - ✅ API test execution
+- ✅ Performance test execution
+- ✅ Visual regression checks
 - ✅ Allure report generation & artifact upload
 - ✅ Parallel test execution
 - ✅ Failure notifications
 
-Pipeline configuration: `.github/workflows/ci.yml`
+```mermaid
+flowchart LR
+    A([git push / MR]) --> B([GitLab CI Triggered])
+    B --> C([Install Dependencies])
+    C --> D([Run Tests in Parallel])
+    D --> E([Generate Allure Report])
+    E --> F([Upload Artifacts])
+    F --> G{All Pass?}
+    G -- ✅ Yes --> H([Pipeline Green])
+    G -- ❌ No --> I([Notify Team])
+```
+
+Pipeline configuration: `.gitlab-ci.yml`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -460,9 +533,9 @@ Pipeline configuration: `.github/workflows/ci.yml`
 
 ## AI-Assisted Quality Engineering
 
-The team leveraged AI as part of the quality engineering workflow. Our AI task focused on **AI code review** — feeding Playwright test code to a large language model and evaluating the output.
+The team leveraged AI as part of the quality engineering workflow, focusing on **AI code review** — feeding Playwright test code to an LLM and critically evaluating the output.
 
-**Prompt used (excerpt from `/ai/prompt.txt`):**
+**Prompt used (from `/ai/prompt.txt`):**
 ```
 You are a senior test automation engineer. Review this Playwright test:
 - Find flakiness risks
@@ -470,8 +543,6 @@ You are a senior test automation engineer. Review this Playwright test:
 - Improve assertions
 - Suggest overall improvements
 ```
-
-**Deliverables:**
 
 | File | Description |
 |------|-------------|
@@ -505,13 +576,13 @@ The team identified and documented a real bug found on tbcbank.ge during explora
 
 ## Contributing
 
-This project was built collaboratively using a **trunk-based development** approach:
+This project was built collaboratively using a **feature branch workflow**:
 
-1. Each team member picks up an issue from the GitHub Project Board
+1. Pick up an issue from the Jira board
 2. Create a feature branch: `git checkout -b feature/your-feature-name`
-3. Commit changes with clear messages: `git commit -m 'Add: describe your change'`
-4. Push the branch: `git push origin feature/your-feature-name`
-5. Open a **Pull Request** targeting `main` — the team reviews before merging
+3. Commit with clear messages: `git commit -m 'Add: describe your change'`
+4. Push: `git push origin feature/your-feature-name`
+5. Open a **Merge Request** targeting `main` — the team reviews before merging
 
 [![Contributors](https://contrib.rocks/image?repo=NikolozZhordania/Bootcamp2025.3_Team1)](https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/graphs/contributors)
 
@@ -530,8 +601,8 @@ This project was built collaboratively using a **trunk-based development** appro
 [issues-url]: https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/issues
 [license-shield]: https://img.shields.io/github/license/NikolozZhordania/Bootcamp2025.3_Team1.svg?style=for-the-badge
 [license-url]: https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/blob/main/LICENSE
-[cicd-shield]: https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white
-[cicd-url]: https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/actions
+[cicd-shield]: https://img.shields.io/badge/CI%2FCD-GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white
+[cicd-url]: https://gitlab.com
 
 [java-shield]: https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
 [java-url]: https://openjdk.org/
@@ -547,7 +618,7 @@ This project was built collaboratively using a **trunk-based development** appro
 [k6-url]: https://k6.io/
 [allure-shield]: https://img.shields.io/badge/Allure-FF6B35?style=for-the-badge&logo=qase&logoColor=white
 [allure-url]: https://allurereport.org/
-[actions-shield]: https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white
-[actions-url]: https://github.com/features/actions
+[gitlab-shield]: https://img.shields.io/badge/GitLab%20CI-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white
+[gitlab-url]: https://gitlab.com
 [jira-shield]: https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white
 [jira-url]: https://www.atlassian.com/software/jira
