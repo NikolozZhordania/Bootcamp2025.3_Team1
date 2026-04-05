@@ -82,14 +82,14 @@ The team operated in a **real Agile environment**: daily standups on Discord, sp
       <a href="https://github.com/NikolozZhordania">@NikolozZhordania</a>
     </td>
     <td align="center" width="160">
-      <img src="https://github.com/LexoMeshveliani.png" width="80" style="border-radius:50%"/><br/><br/>
-      <b>Lekso Meshveliani</b><br/>
-      <a href="https://github.com/LexoMeshveliani">@LexoMeshveliani</a>
+      <img src="https://github.com/NikaButbaia.png" width="80" style="border-radius:50%"/><br/><br/>
+      <b>Nikoloz Butbaia</b><br/>
+      <a href="https://github.com/LexoMeshveliani">@NikaButbaia</a>
     </td>
     <td align="center" width="160">
-      <img src="https://github.com/NikaButbaia.png" width="80" style="border-radius:50%"/><br/><br/>
-      <b>Nika Butbaia</b><br/>
-      <a href="https://github.com/NikaButbaia">@NikaButbaia</a>
+      <img src="https://github.com/LexoMeshveliani.png" width="80" style="border-radius:50%"/><br/><br/>
+      <b>Lekso Meshveliani</b><br/>
+      <a href="https://github.com/NikaButbaia">@LexoMeshveliani</a>
     </td>
   </tr>
   <tr>
@@ -99,12 +99,14 @@ The team operated in a **real Agile environment**: daily standups on Discord, sp
       <a href="https://github.com/mariamarsenidze">@mariamarsenidze</a>
     </td>
     <td align="center" width="160">
-      <img src="https://github.com/identicons/NikolozChixladze.png" width="80" style="border-radius:50%"/><br/><br/>
-      <b>Nikoloz Chixladze</b>
+      <img src="https://github.com/jakubardiaa-creator.png" width="80" style="border-radius:50%"/><br/><br/>
+      <b>Jimusi Akubardia</b><br/>
+      <a href="https://github.com/jakubardiaa-creator">@jakubardiaa-creator</a>
     </td>
     <td align="center" width="160">
-      <img src="https://github.com/identicons/JimusiAxubaria.png" width="80" style="border-radius:50%"/><br/><br/>
-      <b>Jimusi Axubaria</b>
+      <img src="https://github.com/Namie30.png" width="80" style="border-radius:50%"/><br/><br/>
+      <b>Nikoloz Chixladze</b><br/>
+      <a href="https://github.com/Namie30">@Namie30</a>
     </td>
   </tr>
 </table>
@@ -191,6 +193,14 @@ This team was assigned **Team 1 – Locations & ATMs** on [tbcbank.ge](https://t
 [![Allure][allure-shield]][allure-url]
 [![GitLab CI][gitlab-shield]][gitlab-url]
 [![Jira][jira-shield]][jira-url]
+[![MyBatis][mybatis-shield]][mybatis-url]
+[![Xerial SQLite][xerial-shield]][xerial-url]
+[![ZXing][zxing-shield]][zxing-url]
+[![Hamcrest][hamcrest-shield]][hamcrest-url]
+[![Groovy][groovy-shield]][groovy-url]
+[![Lombok][lombok-shield]][lombok-url]
+[![Faker][faker-shield]][faker-url]
+[![Reflections][reflections-shield]][reflections-url]
 
 </div>
 
@@ -618,3 +628,19 @@ This project was built collaboratively using a **feature branch workflow**:
 [gitlab-url]: https://gitlab.com
 [jira-shield]: https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white
 [jira-url]: https://www.atlassian.com/software/jira
+[mybatis-shield]: https://img.shields.io/badge/MyBatis-000000?style=for-the-badge&logo=mybatis&logoColor=white
+[mybatis-url]: https://mybatis.org/mybatis-3/
+[xerial-shield]: https://img.shields.io/badge/Xerial%20SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white
+[xerial-url]: https://github.com/xerial/sqlite-jdbc
+[zxing-shield]: https://img.shields.io/badge/ZXing-4285F4?style=for-the-badge&logo=google&logoColor=white
+[zxing-url]: https://github.com/zxing/zxing
+[hamcrest-shield]: https://img.shields.io/badge/Hamcrest-6DB33F?style=for-the-badge&logo=java&logoColor=white
+[hamcrest-url]: https://hamcrest.org/
+[groovy-shield]: https://img.shields.io/badge/Groovy-4298B8?style=for-the-badge&logo=apachegroovy&logoColor=white
+[groovy-url]: https://groovy-lang.org/
+[lombok-shield]: https://img.shields.io/badge/Lombok-BC4521?style=for-the-badge&logo=lombok&logoColor=white
+[lombok-url]: https://projectlombok.org/
+[faker-shield]: https://img.shields.io/badge/JavaFaker-FF6B6B?style=for-the-badge&logo=java&logoColor=white
+[faker-url]: https://github.com/DiUS/java-faker
+[reflections-shield]: https://img.shields.io/badge/Reflections-6D6D6D?style=for-the-badge&logo=java&logoColor=white
+[reflections-url]: https://github.com/ronmamo/reflections
