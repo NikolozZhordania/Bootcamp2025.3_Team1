@@ -608,7 +608,7 @@ This project was built collaboratively using a **feature branch workflow**:
 2. Create a feature branch: `git checkout -b feature/your-feature-name`
 3. Commit with clear messages: `git commit -m 'Add: describe your change'`
 4. Push: `git push origin feature/your-feature-name`
-5. Open a **Merge Request** targeting `main` — the team reviews before merging
+5. Open a **Pull Request** targeting `main` — the team reviews before merging
 
 [![Contributors](https://img.shields.io/badge/Contributors-6-blue?style=for-the-badge)](https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/graphs/contributors)
 
