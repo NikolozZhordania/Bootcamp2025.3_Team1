@@ -15,7 +15,7 @@ public class CurrencyExchangeTest extends BaseTest {
     @Story("Homepage Access")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Open the homepage and verify that the main page elements and navigation menu are visible.")
-    @Test(description = "DEV-T2 Step 1: Homepage access", priority = 1)
+    @Test(description = "SCRUM-T12 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
                 .openHomepage()
@@ -27,7 +27,7 @@ public class CurrencyExchangeTest extends BaseTest {
     @Story("Navigation Menu Validation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that the dropdown navigation menu is visible and the Locations option is accessible.")
-    @Test(description = "SCRUM-T3 Step 2: Navigation menu access",
+    @Test(description = "SCRUM-T12 Step 2: Navigation menu access",
             priority = 2,
             dependsOnMethods = "homepageAccess")
     public void navMenuAccess() {
@@ -39,7 +39,7 @@ public class CurrencyExchangeTest extends BaseTest {
     @Story("Locations Page Access")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Open the Locations page and validate the page header and URL are displayed correctly.")
-    @Test(description = "SCRUM-T3 Step 3: Locations page selection",
+    @Test(description = "SCRUM-T12 Step 3: Currency Exchange Page Navigation",
             priority = 3,
             dependsOnMethods = "navMenuAccess")
     public void locationsPageSelection() {
@@ -52,7 +52,7 @@ public class CurrencyExchangeTest extends BaseTest {
             dataProviderClass = CurrencyExchangeDataProvider.class,
             dependsOnMethods = "locationsPageSelection",
             priority = 4,
-            description = "Verify currency conversion between {0} and {1} for amount {2}"
+            description = "SCRUM-T12 Step 4: Currency Conversion Verification"
     )
     @Story("User converts currency using the exchange rate calculator")
     @Description("Selects source and target currencies, inputs a transfer amount, " +

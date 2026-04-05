@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="TBC Suite">
 
-    <test name="Desktop Tests">
+<suite name="TBC Bank Cross-Browser Suite" verbose="1" parallel="tests" thread-count="2">
+
+    <!-- CHROMIUM -->
+    <test name="Desktop - Chromium">
         <parameter name="device" value="desktop"/>
         <parameter name="browser" value="chromium"/>
         <classes>
@@ -20,9 +23,10 @@
         </classes>
     </test>
 
-    <test name="Mobile Tests">
-        <parameter name="device" value="mobile"/>
-        <parameter name="browser" value="chromium"/>
+    <!-- FIREFOX -->
+    <test name="Desktop - Firefox">
+        <parameter name="device" value="desktop"/>
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.CalendarTest"/>
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.FilterLocations"/>
@@ -38,4 +42,25 @@
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.OfferTimeTravelTest"/>
         </classes>
     </test>
+
+    <!-- WEBKIT -->
+    <test name="Desktop - WebKit">
+        <parameter name="device" value="desktop"/>
+        <parameter name="browser" value="webkit"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.CalendarTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.FilterLocations"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.LocationsTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.LocationsCityFilterTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.NegativeFilterTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.RandomizedLocationTests"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.CurrencyExchangeTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.QRCodeNavigationTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.OversizedInputFilterTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.WhitespaceFilterTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.LocationBranch"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.OfferTimeTravelTest"/>
+        </classes>
+    </test>
+
 </suite>

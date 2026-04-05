@@ -18,7 +18,7 @@ public class RandomizedLocationTests extends BaseTest {
     @Story("Homepage Access")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Open the homepage and verify that the main page elements and navigation menu are visible.")
-    @Test(description = "DEV-T1 Step 1: Homepage access", priority = 1)
+    @Test(description = "SCRUM-T14 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
                 .verifyHomepageLoaded()
@@ -29,7 +29,7 @@ public class RandomizedLocationTests extends BaseTest {
     @Story("Navigation Menu Validation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that the dropdown navigation menu is visible and the Locations option is accessible.")
-    @Test(description = "DEV-T1 Step 2: Navigation menu access",
+    @Test(description = "SCRUM-T14 Step 2: Navigation menu access",
             priority = 2,
             dependsOnMethods = "homepageAccess")
     public void navMenuAccess() {
@@ -41,7 +41,7 @@ public class RandomizedLocationTests extends BaseTest {
     @Story("Locations Page Access")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Open the Locations page and validate the page header and URL are displayed correctly.")
-    @Test(description = "DEV-T1 Step 3: Locations page selection",
+    @Test(description = "SCRUM-T14 Step 3: Locations page selection",
             priority = 3,
             dependsOnMethods = "navMenuAccess")
     public void locationsPageSelection() {
@@ -57,7 +57,7 @@ public class RandomizedLocationTests extends BaseTest {
     @Story("ATM Locations")
     @Severity(SeverityLevel.NORMAL)
     @Description("Print first 10 ATM location titles from the list.")
-    @Test(description = "Print 10 closest ATM locations",
+    @Test(description = "SCRUM-T14 Step 4: 10 Closest ATMs by Randomized Location",
             priority = 4,
             dependsOnMethods = "locationsPageSelection")
     public void randomizedTenClosestAtms() {
@@ -70,7 +70,7 @@ public class RandomizedLocationTests extends BaseTest {
     @Story("Branch Locations")
     @Severity(SeverityLevel.NORMAL)
     @Description("Print first 10 branch location titles from the list.")
-    @Test(description = "Print 10 closest branch locations",
+    @Test(description = "SCRUM-T14 Step 5: 10 Closest Branches by Randomized Location",
             priority = 5,
             dependsOnMethods = "locationsPageSelection")
     public void randomizedTenClosestBranches() {
@@ -83,7 +83,7 @@ public class RandomizedLocationTests extends BaseTest {
     @Story("Money Input Locations")
     @Severity(SeverityLevel.NORMAL)
     @Description("Print first 10 money input location titles from the list.")
-    @Test(description = "Print top 10 money input locations",
+    @Test(description = "SCRUM-T14 Step 6: 10 Closest Money Input Devices by Randomized Location",
             priority = 6,
             dependsOnMethods = "locationsPageSelection")
     public void randomizedTenClosestMoneyInputDevice() {

@@ -14,7 +14,7 @@ public class CalendarTest extends BaseTest {
     @Story("Homepage Access")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Open the homepage and verify that the main page elements and navigation menu are visible.")
-    @Test(description = "DEV-T1 Step 1: Homepage access", priority = 1)
+    @Test(description = "SCRUM-T11 Step 1: Homepage access", priority = 1)
     public void homepageAccess() {
         homeSteps
                 .verifyHomepageLoaded()
@@ -25,7 +25,7 @@ public class CalendarTest extends BaseTest {
     @Story("Navigation Menu Validation")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify that the dropdown navigation menu is visible and the Locations option is accessible.")
-    @Test(description = "DEV-T1 Step 2: Navigation menu access",
+    @Test(description = "SCRUM-T11 Step 2: Navigation menu access",
             priority = 2,
             dependsOnMethods = "homepageAccess")
     public void navMenuAccess() {
@@ -37,7 +37,7 @@ public class CalendarTest extends BaseTest {
     @Story("Locations Page Access")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Open the Locations page and validate the page header and URL are displayed correctly.")
-    @Test(description = "DEV-T1 Step 3: Locations page selection",
+    @Test(description = "SCRUM-T11 Step 3: Locations page selection",
             priority = 3,
             dependsOnMethods = "navMenuAccess")
     public void locationsPageSelection() {
@@ -52,7 +52,7 @@ public class CalendarTest extends BaseTest {
     @Story("Branch Working Hours")
     @Severity(SeverityLevel.NORMAL)
     @Description("Print all branches by working hours schedule.")
-    @Test(description = "Branches calendar",
+    @Test(description = "SCRUM-T11 Step 4: Branch Service Point Selection",
             priority = 4,
             dependsOnMethods = "locationsPageSelection")
     public void branchesCalendar() {
@@ -63,7 +63,7 @@ public class CalendarTest extends BaseTest {
     @Story("Branch Working Hours")
     @Severity(SeverityLevel.NORMAL)
     @Description("Print all branches by working hours schedule.")
-    @Test(description = "Branches calendar results",
+    @Test(description = "SCRUM-T11 Step 5: Branch Working Hours Calendar Results",
             priority = 5,
             dependsOnMethods = "branchesCalendar")
     public void branchesCalendarResults() {
@@ -78,7 +78,7 @@ public class CalendarTest extends BaseTest {
     @Story("Money Input Working Hours")
     @Severity(SeverityLevel.NORMAL)
     @Description("Print all money input devices by working hours schedule.")
-    @Test(description = "Money input calendar",
+    @Test(description = "SCRUM-T11 Step 6: Money Input Service Point Selection",
             priority = 6,
             dependsOnMethods = "locationsPageSelection")
     public void moneyInputCalendar() {
@@ -89,7 +89,7 @@ public class CalendarTest extends BaseTest {
     @Story("Money Input Working Hours")
     @Severity(SeverityLevel.NORMAL)
     @Description("Print all money input devices by working hours schedule.")
-    @Test(description = "Money input calendar results",
+    @Test(description = "SCRUM-T11 Step 7: Money Input Working Hours Calendar Results",
             priority = 7,
             dependsOnMethods = "moneyInputCalendar")
     public void moneyInputCalendarResults() {
