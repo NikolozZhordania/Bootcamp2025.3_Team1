@@ -610,7 +610,7 @@ This project was built collaboratively using a **feature branch workflow**:
 4. Push: `git push origin feature/your-feature-name`
 5. Open a **Merge Request** targeting `main` — the team reviews before merging
 
-[![Contributors](https://contrib.rocks/image?repo=NikolozZhordania/Bootcamp2025.3_Team1)](https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/graphs/contributors)
+[![Contributors](https://img.shields.io/badge/Contributors-6-blue?style=for-the-badge)](https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/graphs/contributors)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
