@@ -448,7 +448,7 @@ All **21 scenarios** were designed in **Zephyr Scale** covering UI, API, Perform
 
 </div>
 
-> Full scenario export available in `/zephyr/`
+> Full scenario export available on the [📋 Jira Board](https://nickcole0444.atlassian.net/jira/software/projects/SCRUM/boards/1)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
