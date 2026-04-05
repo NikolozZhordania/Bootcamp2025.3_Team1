@@ -304,12 +304,11 @@ flowchart TD
 
     subgraph "🧱 Framework Layers"
         direction LR
-        O([base/]) --> T([tests/])
-        T --> S([steps/])
-        S --> P([pages/])
-        P --> PW([Playwright])
-        T --> N([data/])
-        S --> N
+        O([base/\nBaseTest]) -->|extends| T([tests/])
+        N([constants/\nTest Data]) -->|injected into| T
+        P([pages/\nLocators only]) -->|used by| S([steps/\nFluent API])
+        S -->|called by| T
+        T --> PW([Playwright\nPage])
     end
 
     subgraph "🛠️ Dev Workflow"
