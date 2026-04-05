@@ -13,6 +13,8 @@ public class ForMeMenu extends CommonPage {
             currencyExchangeButtonMobile,
             moneyTransferButton,
             moneyTransferButtonMobile,
+            offersButton,
+            offersButtonMobile,
             otherProductsButton,
             consumerLoanButton,
             consumerLoanButtonMobile,
@@ -36,6 +38,10 @@ public class ForMeMenu extends CommonPage {
                 .filter(new Locator.FilterOptions()
                         .setHasText("მისამართები"));
 
+        this.offersButton = header.getByRole(AriaRole.LINK)
+                .filter(new Locator.FilterOptions()
+                        .setHasText("შეთავაზებები"));
+
         this.currencyExchangeButton = page.getByRole(AriaRole.LINK)
                 .filter(new Locator.FilterOptions().setHasText("ვალუტის კურსები"))
                 .first();
@@ -45,6 +51,10 @@ public class ForMeMenu extends CommonPage {
 
         this.locationsButtonMobile = page.getByRole(AriaRole.LINK)
                 .filter(new Locator.FilterOptions().setHasText(" მისამართები"))
+                .first();
+
+        this.offersButtonMobile = page.getByRole(AriaRole.LINK)
+                .filter(new Locator.FilterOptions().setHasText("შეთავაზებები"))
                 .first();
 
         this.currencyExchangeButtonMobile = page.getByRole(AriaRole.LINK)

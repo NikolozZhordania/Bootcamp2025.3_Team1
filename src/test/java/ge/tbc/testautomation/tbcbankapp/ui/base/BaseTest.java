@@ -26,6 +26,7 @@ public class BaseTest extends DBSetUp {
     protected BaseSteps baseSteps;
     protected CurrencyExchangeSteps currencyExchangeSteps;
     protected TbcCardsSteps tbcCardsSteps;
+    protected OffersSteps offersSteps;
 
 
     @Parameters({"device", "browser"})
@@ -92,6 +93,7 @@ public class BaseTest extends DBSetUp {
         baseSteps = new BaseSteps(page);
         currencyExchangeSteps = new  CurrencyExchangeSteps(page);
         tbcCardsSteps = new TbcCardsSteps(page);
+        offersSteps = new OffersSteps(page);
     }
 
     @BeforeMethod(alwaysRun = true)

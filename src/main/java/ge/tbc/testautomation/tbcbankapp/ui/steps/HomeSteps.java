@@ -48,6 +48,16 @@ public class HomeSteps {
         return this;
     }
 
+    @Step("Open Offers page")
+    public HomeSteps openOffersPage() {
+        if (TestContext.getDevice() == DeviceType.MOBILE) {
+            forMeMenu.offersButtonMobile.click();
+        } else {
+            forMeMenu.offersButton.click();
+        }
+        return this;
+    }
+
     @Step("Open Currency Exchange page")
     public HomeSteps openCurrencyExchangePage() {
         if (TestContext.getDevice() == DeviceType.MOBILE) {
@@ -122,6 +132,16 @@ public class HomeSteps {
 
     @Step("Verify Locations option visibility")
     public HomeSteps verifyLocationsOptionVisibility() {
+        if (TestContext.getDevice() == DeviceType.MOBILE) {
+            assertThat(forMeMenu.locationsButtonMobile).isVisible();
+        } else {
+            assertThat(forMeMenu.locationsButton).isVisible();
+        }
+        return this;
+    }
+
+    @Step("Verify Offers option visibility")
+    public HomeSteps verifyOffersOptionVisibility() {
         if (TestContext.getDevice() == DeviceType.MOBILE) {
             assertThat(forMeMenu.locationsButtonMobile).isVisible();
         } else {
