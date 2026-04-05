@@ -591,15 +591,15 @@ This project was built collaboratively using a **feature branch workflow**:
 ---
 
 <!-- MARKDOWN LINKS & BADGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/NikolozZhordania/Bootcamp2025.3_Team1.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/Contributors-6-blue?style=for-the-badge
 [contributors-url]: https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/NikolozZhordania/Bootcamp2025.3_Team1.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/badge/Forks-0-blue?style=for-the-badge
 [forks-url]: https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/network/members
-[stars-shield]: https://img.shields.io/github/stars/NikolozZhordania/Bootcamp2025.3_Team1.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/badge/Stars-0-blue?style=for-the-badge
 [stars-url]: https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/stargazers
-[issues-shield]: https://img.shields.io/github/issues/NikolozZhordania/Bootcamp2025.3_Team1.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/badge/Issues-0-blue?style=for-the-badge
 [issues-url]: https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/issues
-[license-shield]: https://img.shields.io/github/license/NikolozZhordania/Bootcamp2025.3_Team1.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/badge/License-MIT-green?style=for-the-badge
 [license-url]: https://github.com/NikolozZhordania/Bootcamp2025.3_Team1/blob/main/LICENSE
 [cicd-shield]: https://img.shields.io/badge/CI%2FCD-GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white
 [cicd-url]: https://gitlab.com
