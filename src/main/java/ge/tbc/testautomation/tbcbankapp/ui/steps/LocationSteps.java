@@ -9,6 +9,7 @@ import io.qameta.allure.Step;
 import org.json.JSONArray;
 import org.testng.Assert;
 
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static ge.tbc.testautomation.tbcbankapp.ui.data.Constants.URLs.*;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.GeoCodeUtils.addressComponentExists;
 import static ge.tbc.testautomation.tbcbankapp.ui.utils.LocatorHelpers.atmOption;
@@ -86,8 +87,7 @@ public class LocationSteps {
     @Step("Wait for city dropdown")
     public LocationSteps waitForCityDropdown() {
         locationsPage.cityDropdown.waitFor(new Locator.WaitForOptions()
-                .setState(WaitForSelectorState.VISIBLE)
-                .setTimeout(10000));
+                .setState(WaitForSelectorState.VISIBLE).setTimeout(10000));
         return this;
     }
 
@@ -340,6 +340,16 @@ public class LocationSteps {
         locationsPage.branchOption.click();
         return this;
     }
+    @Step("choose first branch")
+    public LocationSteps chooseNearestBranch(){
+
+        assertThat(locationsPage.branchList.first()).isVisible();
+        assertTrue(locationsPage.branchList.count() > 0);
+        locationsPage.branchList.first().hover();
+        locationsPage.branchList.first().dblclick();
+
+        return  this;
+    }
 
     @Step("Click money input options")
     public LocationSteps clickMoneyInputOptions(){
@@ -408,6 +418,18 @@ public class LocationSteps {
         Assert.assertTrue(count > 0, BRANCHES_MISTAKE);
         return this;
     }
+    @Step("assert Branch Icon Visible Color")
+    public LocationSteps assertBranchIconVisibleColor(String rgb) {
+
+        assertThat(locationsPage.mapIcon).isVisible();
+        locationsPage.mapIcon.click();
+
+        Locator icon=locationsPage.mapIcon.locator("//./*[1]");
+        assertThat(icon).hasCSS("fill",rgb);
+        return this;
+    }
+
+
 
     @Step("24/7 Text validation of branch results")
     public LocationSteps verifyBranchResults() {

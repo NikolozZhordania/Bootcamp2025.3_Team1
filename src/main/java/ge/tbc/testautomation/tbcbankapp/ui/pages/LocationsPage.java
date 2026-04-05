@@ -30,7 +30,9 @@ public class LocationsPage extends CommonPage {
             sunday,
             saturday,
             allWeek,
-            mondayToFridayAndSaturday;
+            mondayToFridayAndSaturday,
+            branchList,
+            mapIcon;
 
     public LocationsPage(Page page) {
         super(page);
@@ -86,5 +88,7 @@ public class LocationsPage extends CommonPage {
         this.mondayToFridayAndSaturday = page.locator("app-atm-branches-section-list-item")
                 .filter(new Locator.FilterOptions().setHasText("ორშაბათი-პარასკევი: 10:00-18:00"))
                 .filter(new Locator.FilterOptions().setHasText(" შაბათი: 10:00-14:00 "));
+        this.branchList=page.locator("app-atm-branches-section-list-item");
+        this.mapIcon = page.locator("//*[@class='atm-branches-map-marker active']");
     }
 }
