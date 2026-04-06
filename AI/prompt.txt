@@ -1,0 +1,269 @@
+================================================================
+TASK 5 – AI-ASSISTED QUALITY ENGINEERING
+ALL PROMPTS — MERGED
+================================================================
+
+
+================================================================
+SECTION 1 — DATABASE SETUP & DATA-DRIVEN ARCHITECTURE
+================================================================
+
+User Prompt 1:
+"i have a full_dump.db file that already contains table creation and all the data (atms, branches etc)
+right now its just one dump and not really usable in the project
+how should i restructure this so it fits into a data driven setup?"
+
+---
+
+User Prompt 2:
+"im building automation for the tbc locations page (ui + api)
+i want to use that data in a data driven way instead of hardcoding values
+stack: java+maven, testng, playwright+rest-assured
+for context we usually use mssql and mybatis
+goal is that team should run it easily, data stays consistent, and it works in ci/cd without extra setup
+what would you suggest here?"
+
+---
+
+User Prompt 3:
+"ok sqlite is ok but why is it better than mssql in this case?
+mainly thinking about ci/cd, setup for the team and test isolation
+i want to understand the tradeoffs before deciding"
+
+---
+
+User Prompt 4:
+"ok makes sense, lets go with sqlite
+now i want this to be self healing
+every test run should delete the db, recreate it and seed fresh data automatically
+im using mybatis
+here's my schema:
+
+CREATE TABLE tbc_locations (
+id INTEGER PRIMARY KEY,
+name TEXT,
+location_desc TEXT,
+address TEXT,
+type TEXT,
+regionName TEXT,
+latitude REAL,
+longitude REAL,
+distance INTEGER,
+worksallday BOOLEAN,
+has_gel BOOLEAN DEFAULT 1,
+has_usd BOOLEAN DEFAULT 0,
+has_eur BOOLEAN DEFAULT 0,
+weekday_hours TEXT DEFAULT '10:00-18:00',
+saturday_hours TEXT DEFAULT '10:00-14:00'
+);
+
+treat api json as input and act like an etl step:
+map fields, convert worksallday true/false into 1/0, fill defaults if missing
+generate sql insert statements using realistic georgian data I'll provide you with using the json list of atms/branches and so on"
+
+---
+
+User Prompt 5:
+"now i want a proper template so the team can actually use this
+structure with db folder, schema.sql, seed.sql, setup script, mybatis config etc
+also i dont want anyone running scripts manually
+this should run automatically before tests and behave the same locally and in ci/cd"
+
+---
+
+User Prompt 6:
+"i feel like we dont really use much from this db
+most of the actual data is coming from the api anyway
+so are we actually gaining anything from having this mock db?"
+
+---
+
+User Prompt 7:
+"what happens if tests run in parallel?
+like in ci/cd or locally
+will sqlite cause any issues or is this setup safe?"
+
+---
+
+User Prompt 8:
+"if api changes later or we need more scenarios, whats the cleanest way to update test data?
+i dont want to rewrite everything every time"
+
+---
+
+User Prompt 9:
+"in ci/cd do we need anything extra for sqlite to work or will it just run with the project?"
+
+---
+
+User Prompt 10:
+"if seed.sql becomes big over time, like a lot of rows, will it slow down test execution?"
+
+
+================================================================
+SECTION 2 — E2E TEST SCENARIO GENERATION
+================================================================
+Context provided to AI:
+- Target application: https://tbcbank.ge/ka/atms&branches (TBC Bank ATM & Branches page)
+- Code review guidelines document (Zephyr Scale test case design rules)
+- Existing test class examples (FilterLocations.java, NegativeFilterTest.java)
+- Existing step classes (LocationSteps.java, HomeSteps.java)
+- Existing page classes (LocationsPage.java, ForMeMenu.java)
+- BaseTest.java setup
+
+---
+
+PROMPT 1 — Edge Case Scenario Generation
+"tbcbank.ge/ka/atms&branches write edge case scenarios"
+
+---
+
+PROMPT 2 — Full Zephyr Format
+"write me in full details for zephyr third, 5th"
+Referring to scenarios 3 and 5 from the generated list:
+- Scenario 3: ATM Search — Whitespace-Only Input in Location Field
+- Scenario 5: ATM Search — Extremely Long Input String
+
+---
+
+PROMPT 3 — Formatting Request
+"can you format this better for me? first step, then test data,
+then expected result, then description, so i can copy paste easier"
+
+---
+
+PROMPT 4 — Code Generation
+"sorry, one mistake in whitespacefiltertest scenario,
+if we put in whitespaces, list shouldn't be empty afterwards"
++ earlier: "no i wanted you to write those scenarios you wrote me as code"
+
+
+================================================================
+SECTION 3 — BUG ANALYSIS SESSION
+================================================================
+Context: QA engineer performing bug analysis on TBC Bank's Locations page.
+AI (Claude) used as a senior QA automation engineer to analyze, critique,
+and improve Jira bug reports.
+
+---
+
+PROMPT 1 — Role Assignment + First Bug Report
+"You are a senior QA automation engineer. Analyze the following bug reports and provide:
+- Suggestions for improving clarity and completeness
+- Severity and impact assessment"
+
+[Bug Report Submitted:]
+Bug Title: Online Chat Redirection Failure: Button Is Clickable but No Action Is Performed
+Environment: URL: https://tbcbank.ge/en/atms&branches | Browser: Chrome 123.0.6312.86 (64bit) | OS: Windows 11 | Device: Desktop
+Preconditions: User is on the Locations page, not logged in, browser language set to English
+Steps to Reproduce:
+  1. Navigate to https://tbcbank.ge/en/atms&branches
+  2. Scroll down to the "Contact Us" section.
+  3. Click on the Online Chat
+Expected Result: The online chat window or a dedicated chat page should be launched/opened.
+Actual Result: The element is clickable, but the chat interface does not trigger and no redirection occurs.
+Severity: Major | Priority: High | Reproducibility: 5/5
+
+---
+
+PROMPT 2 — Second Bug Report Submission
+[Bug Report Submitted:]
+Bug Title: Phone Number Redirection Failure: Clickable but No Action Is Performed
+Environment: URL: https://tbcbank.ge/en/atms&branches | Browser: Chrome 123.0.6312.86 | OS: Windows 11 | Device: Desktop
+Steps to Reproduce:
+  1. Navigate to https://tbcbank.ge/en/atms&branches
+  2. Scroll down to the "Contact Us" section.
+  3. Click on the mobile number
+Expected Result: Clicking the phone number should open the device dialer with the number pre-filled.
+Actual Result: Phone number is clickable but no action is performed.
+Severity: Major | Priority: High | Reproducibility: 5/5
+
+---
+
+PROMPT 3 — DevTools Knowledge Request
+"how do i see console log"
+
+---
+
+PROMPT 4 — Sharing DevTools Finding
+"there is not any errors about clicking online chat or phone number"
+
+---
+
+PROMPT 5 — Third Bug Report Submission (with copy-paste error)
+[Bug Report Submitted — contained copy-paste error:]
+Bug Title: "Visit a Branch" Redirection Failure: Button Is Clickable but No Action Is Performed
+Steps to Reproduce:
+  1. Navigate to https://tbcbank.ge/en/atms&branches
+  2. Scroll down to the "Contact Us" section.
+  3. Click on the Online Chat   ← COPY-PASTE ERROR
+Expected Result: The online chat window or a dedicated chat page should be launched/opened.  ← COPY-PASTE ERROR
+Severity: Major | Priority: High | Reproducibility: 5/5
+
+---
+
+PROMPT 6 — Correction of Bug Title
+"my mistake Online Chat Redirection Failure: Button Is Clickable but No Action Is Performed this is the title"
+[User confirmed via interactive widget that the Online Chat button in the Contact Us section is the SAME button as Bug #2 — duplicate]
+
+---
+
+PROMPT 7 — Corrected Third Bug Report Submission
+[Bug Report Submitted — corrected version:]
+Bug Title: "Visit a Branch" Redirection Failure: Button Is Clickable but No Action Is Performed
+Steps to Reproduce:
+  1. Navigate to https://tbcbank.ge/en/atms&branches
+  2. Scroll down to the "Contact Us" section.
+  3. Swipe to "Visit a branch"
+  4. Click on the "Visit a branch"
+Expected Result: Clicking "Visit a Branch" should redirect the user to the branch details page.
+Actual Result: "Visit a Branch" button is clickable but no action is performed.
+Severity: Major | Priority: High | Reproducibility: 5/5
+
+---
+
+PROMPT 8 — Clarification on Screenshots
+"i have screenshots on every bug"
+
+---
+
+PROMPT 9 — Task Deliverable Request
+"Task 5 – AI-Assisted Quality Engineering ... From this conversation, collect all prompts I gave you and everything I used you for to be more efficient."
+
+
+================================================================
+SECTION 4 — K6 PERFORMANCE BUG ANALYSIS (ChatGPT vs Gemini)
+================================================================
+Context provided to both AIs:
+  URL: https://apigw.tbcbank.ge/api/v1/atmsAndBranches/list | Method: POST with dynamic CSV payload
+  - Smoke Test:  Avg 313ms, p95 399ms, 0 errors ✅
+  - Load Test:   Avg 2.68s, p95 5.25s, 0 errors ⚠️
+  - Stress Test: Avg 7.15s, p95 21.76s, 7 failures ❌
+  Throughput plateaued at ~13.4 req/s despite 300 VUs. Each response ~425 KB.
+
+QUESTION: "What went wrong and why? Is this a website performance issue or is the server actively blocking/rate-limiting my requests?"
+
+---
+
+ROUND 1
+PROMPT 1A → ChatGPT: [same question + context above]
+PROMPT 1B → Gemini:  [same question + context above]
+
+---
+
+ROUND 2 — Cross-Examination
+PROMPT 2A → ChatGPT (presenting Gemini's argument):
+"Another AI concluded: 'connection reset by peer' suggests active connection rejection — rate limiting or IP throttling, not organic degradation. A truly overloaded server would return 503s, not reset connections. How do you respond?"
+
+PROMPT 2B → Gemini (presenting ChatGPT's argument):
+"Another AI concluded: Classic saturation symptoms — throughput ceiling at ~13.4 req/s, exponential latency, connection pool exhaustion. The ~425 KB payload creates ~6 MB/s I/O bottleneck. This is degradation, not rate limiting. Do you still maintain your position?"
+
+---
+
+ROUND 3
+PROMPT 3 → Gemini (after ChatGPT doubled down):
+"ChatGPT added: (1) 0.14-0.28% error rate inconsistent with blocking; (2) Throughput plateaued, not collapsed; (3) Smoke test clean — no IP filtering; (4) Payload math explains ~6 MB/s ceiling; (5) Linear ramp degradation matches saturation, not hard block. Does this change your assessment?"
+
+================================================================
+END OF PROMPT.TXT
+================================================================
