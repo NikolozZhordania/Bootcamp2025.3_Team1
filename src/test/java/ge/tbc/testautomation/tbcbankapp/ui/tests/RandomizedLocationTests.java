@@ -2,17 +2,22 @@ package ge.tbc.testautomation.tbcbankapp.ui.tests;
 
 import ge.tbc.testautomation.tbcbankapp.ui.base.BaseTest;
 import io.qameta.allure.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 @Epic("TBC Bank Web Application")
 @Feature("Locations & ATMs")
+
 public class RandomizedLocationTests extends BaseTest {
+
+    private static final Logger log = LogManager.getLogger(RandomizedLocationTests.class);
 
     @BeforeClass
     public void logging() {
-        System.out.println("District: " + currentDistrict.name());
-        System.out.println("Lat: " + currentLocation[0] + " | Lng: " + currentLocation[1]);
+        log.info("District: {}", currentDistrict.name());
+        log.info("Lat: {} | Lng: {}", currentLocation[0], currentLocation[1]);
     }
 
     @Story("Homepage Access")

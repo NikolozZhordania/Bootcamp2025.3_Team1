@@ -29,10 +29,10 @@ public class ForMeMenu extends CommonPage {
         this.header = page.getByRole(AriaRole.BANNER);
 
         this.tbcCards = page.locator("span.tbcx-pw-mega-menu-sub-item__title",
-                new Page.LocatorOptions().setHasText("თიბისი ბარათი"));
+                new Page.LocatorOptions().setHasText("თიბისი ბარათი")).filter(new Locator.FilterOptions().setVisible(true));
 
         this.tbcCardsDropdown = page.locator("span.tbcx-pw-mega-menu-sub-item__title",
-                new Page.LocatorOptions().setHasText("ბარათები"));
+                new Page.LocatorOptions().setHasText("ბარათები")).filter(new Locator.FilterOptions().setVisible(true));
 
         this.locationsButton = header.getByRole(AriaRole.LINK)
                 .filter(new Locator.FilterOptions()
