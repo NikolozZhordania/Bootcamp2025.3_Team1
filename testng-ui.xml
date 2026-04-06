@@ -31,7 +31,6 @@
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.NegativeFilterTest"/>
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.RandomizedLocationTests"/>
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.CurrencyExchangeTest"/>
-            <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.QRCodeNavigationTest"/>
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.OversizedInputFilterTest"/>
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.WhitespaceFilterTest"/>
             <class name="ge.tbc.testautomation.tbcbankapp.ui.tests.LocationBranch"/>

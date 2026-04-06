@@ -1,4 +1,4 @@
-package ge.tbc.testautomation.tbcbankapp.api;
+package ge.tbc.testautomation.tbcbankapp.api.tests;
 
 import ge.tbc.testautomation.tbcbankapp.api.steps.TbcAtmBranchSteps;
 import ge.tbc.testautomation.tbcbankapp.api.data.constants.MapConstants;

@@ -2,9 +2,7 @@ target/
 .idea/
 *.iml
 build/
-allure-results/
 allure-report/
-target/allure-results/
 target/allure-report/
 /node_modules/
 tbc_map.db

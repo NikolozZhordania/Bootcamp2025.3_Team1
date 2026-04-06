@@ -9,6 +9,7 @@
             <class name="ge.tbc.testautomation.tbcbankapp.api.tests.FinancialReportsIntegrityTest"/>
             <class name="ge.tbc.testautomation.tbcbankapp.api.tests.OffersDataIntegrityTest"/>
             <class name="ge.tbc.testautomation.tbcbankapp.api.tests.TbcIdTest"/>
+            <class name="ge.tbc.testautomation.tbcbankapp.api.tests.MapApiTest"/>
         </classes>
     </test>
 
