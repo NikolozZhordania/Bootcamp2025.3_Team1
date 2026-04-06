@@ -7,4 +7,3 @@ target/allure-report/
 /node_modules/
 tbc_map.db
 performance_feeder.csv
-.allure

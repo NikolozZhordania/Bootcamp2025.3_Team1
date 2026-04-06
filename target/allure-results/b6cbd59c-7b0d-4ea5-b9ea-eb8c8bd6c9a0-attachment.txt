@@ -1,0 +1,1 @@
+⚠ [LoadTest] ⚠ Thresholds not met (exit code: 99). Review k6 output above.
